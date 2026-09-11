@@ -1,0 +1,4 @@
+# Pastas que o proprio Claude Code cria dentro de ~/.claude/skills.
+# Ficam ignoradas pra que o sync (git clean -fd) nunca as apague.
+synced/
+.trash/

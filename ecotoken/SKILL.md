@@ -1,5 +1,5 @@
 ---
-name: ECOTOKEN
+name: ecotoken
 description: Estratégia de arquitetura para economia de tokens em projetos HTML/JS/CSS no Claude Code.
 ---
 
