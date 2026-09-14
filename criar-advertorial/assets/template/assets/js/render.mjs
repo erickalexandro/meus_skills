@@ -11,7 +11,7 @@ export function renderBlock(b, ctx) {
     case "p": return `<p>${b.v}</p>`;
     case "lede": return `<div class="lead">${b.v.map((p) => `<p>${p}</p>`).join("")}</div>`;
     case "pull": return `<blockquote>${b.v}</blockquote>`;
-    case "img": return `<figure class="fig"><img src="${img(imgs, b.k)}" alt="" loading="lazy">${b.cap ? `<figcaption>${b.cap}</figcaption>` : ""}</figure>`;
+    case "img": if (!imgs[b.k] || (b.ifMissing && imgs[b.ifMissing])) return ""; return `<figure class="fig${b.sq ? " sq" : ""}"><img src="${img(imgs, b.k)}" alt="" loading="lazy">${b.cap ? `<figcaption>${b.cap}</figcaption>` : ""}</figure>`;
     case "note": {
       const [box, list] = NOTE[b.cls] || ["plain", "chk"];
       return `<div class="box ${box}">${b.h ? `<h3>${b.h}</h3>` : ""}${b.list ? `<ul class="${list}">${li(b.list)}</ul>` : ""}${b.v ? `<p>${b.v}</p>` : ""}${b.foot ? `<p class="foot-note">${b.foot}</p>` : ""}</div>`;
@@ -20,9 +20,10 @@ export function renderBlock(b, ctx) {
     case "steps": return `<ol class="steps">${b.items.map(([t, d]) => `<li><b>${t}</b>${d}</li>`).join("")}</ol>`;
     case "cards": return b.items.map(([h, p], i) => `<div class="opt${i === b.items.length - 1 ? " win" : ""}"><b>${h}</b>${p}</div>`).join("");
     case "time": return `<ol class="tl">${b.rows.map(([w, d]) => `<li><b>${w}</b><span>${d}</span></li>`).join("")}</ol>`;
-    case "testimonials": return b.items.map(([k, n, tag, q, obj]) => `<figure class="tcard"><img src="${img(imgs, k)}" alt="${n} — before and after" loading="lazy"><div class="tb">${obj ? `<p class="obj">${obj}</p>` : ""}<p class="tq">“${q}”</p><p class="tm">${n} &nbsp;<i>★★★★★</i>&nbsp; ${tag}</p></div></figure>`).join("") + (b.foot ? `<p class="small-note">${b.foot}</p>` : "");
-    case "compare": return `<div class="compare"><div class="them"><b>${b.them[0]}</b><span class="big">${b.them[1]}</span>${b.them[2]}</div><div class="us"><b>${b.us[0]}</b><span class="big">${b.us[1]}</span>${b.us[2]}</div></div>`;
-    case "price": return `<div class="price">${b.tiers.map(([n, m, p, u, flag]) => `<div class="tier${flag ? " best" : ""}">${flag ? `<span class="flag">${flag}</span>` : ""}<div><div class="name">${n}</div><div class="meta">${m}</div></div><div class="num">${p}<span>${u}</span></div></div>`).join("")}</div><p class="cta-under">${b.under}</p>`;
+    case "testimonials": return b.items.filter((i) => imgs[i[0]]).map(([k, n, tag, q, obj]) => `<figure class="tcard"><img src="${img(imgs, k)}" alt="${n} — before and after" loading="lazy"><div class="tb">${obj ? `<p class="obj">${obj}</p>` : ""}<p class="tq">“${q}”</p><p class="tm">${n} &nbsp;<i>★★★★★</i>&nbsp; ${tag}</p></div></figure>`).join("") + (b.foot ? `<p class="small-note">${b.foot}</p>` : "");
+    case "compare": { const c = (x, cls) => `<div class="${cls}">${x.img && imgs[x.img] ? `<img src="${imgs[x.img]}" alt="">` : ""}<b>${x.name}</b><span class="big">${x.price}</span><span class="per">${x.per}</span>${x.day ? `<span class="day">${x.day}</span>` : ""}</div>`; return `<div class="compare">${c(b.them, "them")}${c(b.us, "us")}</div>`; }
+    case "faq": return `<div class="faq">${b.items.map(([q, a]) => `<div class="qa"><p class="q">${q}</p><p class="a">${a}</p></div>`).join("")}</div>`;
+    case "price": return `<div class="price">${b.tiers.map(([n, m, p, u, flag, qty]) => `<div class="tier${flag ? " best" : ""}">${flag ? `<span class="flag">${flag}</span>` : ""}${b.img && imgs[b.img] ? `<div class="thumb"><img src="${imgs[b.img]}" alt="">${qty ? `<span class="qty">×${qty}</span>` : ""}</div>` : ""}<div class="tinfo"><div class="name">${n}</div><div class="meta">${m}</div></div><div class="num">${p}<span>${u}</span></div></div>`).join("")}</div><p class="cta-under">${b.under}</p>`;
     case "guarantee": return `<div class="panel"><h2>${b.h}</h2>${b.seal ? `<img class="seal" src="${img(imgs, b.seal)}" alt="90-day money-back guarantee">` : ""}${[].concat(b.v).map((p) => `<p>${p}</p>`).join("")}</div>`;
     case "cta": return `<div class="cta-wrap${b.hd ? " mid" : ""}">${b.hd ? `<p class="hd">${b.hd}</p>` : ""}<a class="cta" href="${cta}" rel="nofollow noopener">${b.label}</a><div class="cta-sub">${b.under}</div>${b.seal ? `<img class="seal-inline" src="${img(imgs, b.seal)}" alt="90-day money-back guarantee">` : ""}</div>`;
     case "sign": return `<div class="signoff"><b>${b.v}</b><span>${b.sub}</span></div>`;

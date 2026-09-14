@@ -79,3 +79,17 @@ Regras da peça: <linhas vermelhas de compliance> · <garantia> · <checkout>
 - nada cortado na lateral.
 
 Por que o iframe no script: o Edge headless desta máquina aplica um fator ~1,26 na largura da janela e corta a lateral; renderizar dentro de um iframe de largura fixa resolve.
+
+## Imagens novas: formato, quantidade e geração (aprendido na v2.2 da 1ª peça)
+
+- **Formato:** só **horizontal (3:2 ou 16:9)** ou **quadrado (1:1)** para o que merece destaque (antes/depois da narradora, encruzilhada). **Nunca vertical.** No `data.js`, `sq: true` centraliza e limita a largura da quadrada.
+- **Poucas e estratégicas:** imagem nova só onde ela faz a pessoa **viver a cena**. Os momentos de trama (vergonha com plateia, fundo do poço, descoberta), a prova pessoal e a encruzilhada. O resto é diagrama, produto ou nada.
+- **Encruzilhada ("two versions")**: imagem dividida com a **cor contando a história**. Lado frio e dessaturado = a vida se não agir (mesma pessoa, sozinha, fora da foto). Lado quente e dourado = a vida com a solução (dentro da foto, com a família).
+- **Hero** com contraste que combine com a headline (se a headline é dor, o hero não sorri).
+- **Oferta clara sem excesso:**
+  - card de comparação com a **foto do concorrente** e a **foto do produto**, preço por mês **e por dia**;
+  - bundles com **miniatura do pote + quantidade (×2/×4/×6) + total**;
+  - selo de garantia no painel e no último CTA, sem repetir colado.
+- **Consistência do avatar:** anexar as fotos reais da narradora como referência de identidade e colar um **bloco fixo de consistência** em todo prompt (idade, cabelo, rosto, estilo foto de iPhone, cenário da casa, sem texto). Para "antes", descrever a mesma mulher mais pesada. Descartar qualquer imagem com rosto divergente, mãos erradas ou texto deformado.
+- **Geração:** via ChatGPT no navegador. Se o navegador não estiver controlável na sessão, escreva o **pacote de prompts** (arquivo no Workspace com nome exato de cada arquivo, formato, onde entra e o que precisa fazer sentir) e peça ao Erick para salvar em `assets/img/_novas/`. Depois `node tools/prep-img.mjs` converte para webp leve.
+- **Imagem que ainda não existe não quebra a página:** o render pula o bloco. `ifMissing: "<chave>"` faz um placeholder sumir sozinho quando a imagem definitiva chegar.

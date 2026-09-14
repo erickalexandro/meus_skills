@@ -21,7 +21,9 @@ export const CONFIG = {
   },
 
   blocks: [
-    { t: "img", k: "hero", cap: "Legenda que puxa pra história (não mostrar o produto aqui)." },
+    { t: "img", k: "hero", cap: "Legenda que puxa pra história (não mostrar o produto aqui)." },   // imagem ausente = bloco pulado
+    { t: "img", k: "hero_old", ifMissing: "hero", cap: "Só aparece se hero não existir (troca automática quando a imagem nova chegar)." },
+    { t: "img", k: "ba_narradora", sq: true, cap: "sq: true = imagem quadrada com destaque" },
     { t: "lede", v: ["1º parágrafo sai em negrito automaticamente.", "Demais parágrafos do lead..."] },
 
     // note: cls "teaser" (caixa azul com setas) · "calm" (caixa amarela tracejada com checks — auto-identificação)
@@ -46,8 +48,10 @@ export const CONFIG = {
     // testimonials: [chaveDaImagem, nome, tag, depoimento, título curto opcional] — imagem menor à esquerda
     { t: "testimonials", items: [["ba1", "Nome", "Verified purchase", "Depoimento sem aspas.", "Título curto"]], foot: "Disclaimer de resultados." },
 
-    { t: "compare", them: ["The pen", "~$1,600", "per month"], us: ["Product", "from $19.99", "per jar"] },
-    { t: "price", tiers: [["Buy 1, Get 1 Free", "2 jars", "$44.75", "per jar"], ["Buy 3, Get 3 Free", "6 jars", "$19.99", "per jar", "Lowest price"]], under: "Frete · sem assinatura · só no site oficial" },
+    { t: "compare", them: { img: "concorrente", name: "The shot", price: "~$1,600", per: "per month", day: "≈ $53 a day" }, us: { img: "produto", name: "Product", price: "$19.99", per: "per jar · 1 month", day: "≈ 67¢ a day" } },
+    { t: "faq", items: [["“Pergunta/objeção?”", "Resposta honesta."]] },
+    // price: img = miniatura do produto; cada tier = [nome, meta (inclua o total), preço, unidade, selo ou "", quantidade]
+    { t: "price", img: "produto", tiers: [["Buy 1, Get 1 Free", "2 jars · $89.50 total", "$44.75", "per jar", "", "2"], ["Buy 3, Get 3 Free", "6 jars · $119.94 total", "$19.99", "per jar", "Lowest price", "6"]], under: "Frete · sem assinatura · só no site oficial" },
     { t: "guarantee", seal: "seal", h: "Título da garantia", v: ["Parágrafo 1", "Parágrafo 2"] },
 
     { t: "sign", v: "— Nome", sub: "Nome completo · cidade" },

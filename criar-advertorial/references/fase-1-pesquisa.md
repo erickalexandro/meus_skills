@@ -76,3 +76,10 @@ Inventário visual (tem / falta):
 ```
 
 Brief que tenta caber tudo vira arquivo morto. Só entra o que muda o texto.
+
+## 8. Como o tráfego chega (mecânica de entrada)
+
+Anote o caminho exato até a página, porque ele define o topo:
+- **Orgânico com palavra-chave** (vídeo → comentário com palavra → link por DM/resposta → advertorial): o leitor já viu a narradora e muitas vezes o produto. Mapeie **o que o vídeo revelou** (produto? ingredientes? preço?) e **o que escondeu de propósito** (ex.: o último ingrediente). A página começa continuando o vídeo e paga essa curiosidade escondida, com loop aberto já no topo/lead.
+- **Pago (Meta/TikTok)**: o criativo define o nível de consciência e se a headline pode citar o produto.
+- Registre o nível de consciência **de quem clica**, não do mercado em geral.
