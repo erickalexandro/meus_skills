@@ -80,6 +80,9 @@ Brief que tenta caber tudo vira arquivo morto. Só entra o que muda o texto.
 ## 8. Como o tráfego chega (mecânica de entrada)
 
 Anote o caminho exato até a página, porque ele define o topo:
-- **Orgânico com palavra-chave** (vídeo → comentário com palavra → link por DM/resposta → advertorial): o leitor já viu a narradora e muitas vezes o produto. Mapeie **o que o vídeo revelou** (produto? ingredientes? preço?) e **o que escondeu de propósito** (ex.: o último ingrediente). A página começa continuando o vídeo e paga essa curiosidade escondida, com loop aberto já no topo/lead.
+- **Orgânico com palavra-chave** (vídeo → comentário com palavra → link por DM/resposta → advertorial): o leitor já viu a narradora e, com frequência, o produto. Mapeie o **padrão geral** do que esse tipo de criativo costuma revelar (produto? ingredientes? preço?) e deixar em aberto — isso ajusta o nível de consciência e o que a headline pode citar.
 - **Pago (Meta/TikTok)**: o criativo define o nível de consciência e se a headline pode citar o produto.
 - Registre o nível de consciência **de quem clica**, não do mercado em geral.
+
+> [!warning] Não amarrar a página a um roteiro específico
+> Quando houver **muitos criativos diferentes** testando ângulos diferentes (caso comum em orgânico com vários vídeos/hosts), a página **não pode presumir uma linha exata de um único roteiro** (ex.: "the ingredient I didn't name in my video", "you've seen my videos"). Isso quebra a página para qualquer criativo que não seja aquele específico. Escreva de forma **agnóstica ao criativo**: coerente com o padrão geral e com o ângulo/mecanismo da oferta, mas sem citar um vídeo, uma fala ou um "não-dito" específico que só um roteiro carrega. *(Erro cometido e corrigido na v2.2 do primeiro advertorial, 2026-09-14 — ver playbook.)*
