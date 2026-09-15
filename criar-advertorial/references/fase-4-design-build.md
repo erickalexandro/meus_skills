@@ -88,7 +88,8 @@ Por que o iframe no script: o Edge headless desta máquina aplica um fator ~1,26
 - **Hero** com contraste que combine com a headline (se a headline é dor, o hero não sorri).
 - **Oferta clara sem excesso:**
   - card de comparação com a **foto do concorrente** e a **foto do produto**, preço por mês **e por dia**;
-  - bundles com **miniatura do pote + quantidade (×2/×4/×6) + total**;
+  - bundles com **miniatura do pote + quantidade (×2/×4/×6) + preço por pote**, **sem total** (o Erick removeu os totais) e selo do kit maior com o reason why;
+  - um único tempo de preparo/uso em toda a página (o oficial do produto);
   - selo de garantia no painel e no último CTA, sem repetir colado.
 - **Consistência do avatar:** anexar as fotos reais da narradora como referência de identidade e colar um **bloco fixo de consistência** em todo prompt (idade, cabelo, rosto, estilo foto de iPhone, cenário da casa, sem texto). Para "antes", descrever a mesma mulher mais pesada. Descartar qualquer imagem com rosto divergente, mãos erradas ou texto deformado.
 - **Geração:** via ChatGPT no navegador. Se o navegador não estiver controlável na sessão, escreva o **pacote de prompts** (arquivo no Workspace com nome exato de cada arquivo, formato, onde entra e o que precisa fazer sentir) e peça ao Erick para salvar em `assets/img/_novas/`. Depois `node tools/prep-img.mjs` converte para webp leve.

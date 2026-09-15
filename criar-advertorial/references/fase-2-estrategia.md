@@ -19,6 +19,7 @@ Objetivo: sair com a **ficha da peça** (template no fim). É curta, mas é ela 
    - Escolha **família** (quem fala: autoridade, conflito, história real, comercial, fofoca, avatar) e **lente** (contrarian, failure story, conspiração, mythbuster, teaser de mecanismo…).
    - Um ângulo forte tem **conflito, história e contraste**.
 5. **Big idea e nomes chiclete**
+   - **Antes de inventar nomes, procure o mecanismo oficial do avatar/oferta** (outras páginas do mesmo avatar, briefing, prompt do Erick). Se existir, ele é lei: vilão, solução desejada, causa da falha e mecanismo exclusivo seguem o oficial. *(1ª peça: os nomes próprios da página foram todos trocados pelo mecanismo oficial das outras 4 páginas do avatar.)*
    - Nome do **vilão/causa** (o problema ganha nome próprio; forte, visual, de preferência com algo **contável** — "30 camadas viram 3", "menos de 1%").
    - Nome do **mecanismo da solução** (curto, repetível; se outras páginas/ads da mesma oferta já usam um nome, **mantenha** por congruência).
 6. **Agressividade** (conservador → agressivo → black) dentro das linhas vermelhas do produto.

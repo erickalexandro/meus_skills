@@ -25,7 +25,7 @@ Esta skill é o **processo + o template técnico**. O **conhecimento** (mastercl
 | **4. Design, imagens e build** — design system aprovado, regras de imagem, projeto ecotoken, build do HTML único, conferência visual em 390px | HTML final + screenshots conferidos | `references/fase-4-design-build.md` + `assets/template/` |
 | **5. Entrega e evolução** — entrega com diagnóstico e pendências, revisão com checklist, **atualização do playbook e da skill** | Entregável + doc de decisões + aprendizados registrados | `references/fase-5-entrega-e-evolucao.md` |
 
-Pedido parcial? Entre na fase certa: "revisa com o checklist" → fase 5 (mas leia o brief/ficha da peça se existirem); "faz a versão pro avatar 3" → fase 1 focada no avatar novo + fase 2 (troca de ângulo: congela mecanismo/prova/oferta, muda headline, imagem de topo e história/lead); "muda o visual" → fase 4.
+Pedido parcial? Entre na fase certa: "revisa com o checklist", "analisa", "tá pronto?", "sobe" → skill **`revisar-advertorial`** (leia o brief/ficha da peça se existirem); "faz a versão pro avatar 3" → fase 1 focada no avatar novo + fase 2 (troca de ângulo: congela mecanismo/prova/oferta, muda headline, imagem de topo e história/lead); "muda o visual" → fase 4.
 
 ## Regras que valem em todas as fases
 
@@ -53,6 +53,7 @@ Detalhes em `references/fase-5-entrega-e-evolucao.md`.
 
 | Versão | Data | O que mudou |
 |---|---|---|
+| 1.3 | 2026-09-14 | Revisão, checklist, QA e entrega passam para a skill irmã `revisar-advertorial`. Fase 2: checar mecanismo oficial do avatar antes de inventar nomes. Fase 4: bundles sem total + tempo de preparo único. |
 | 1.2 | 2026-09-14 | Correção: fase 1 não deve mais presumir uma linha exata de um roteiro de criativo específico (ex.: "o ingrediente que não citei no vídeo"). Quando há muitos criativos testando ângulos diferentes, a página tem que ser agnóstica ao criativo — coerente com o padrão geral, nunca amarrada a uma fala única. |
 | 1.1 | 2026-09-14 | Fase 1 ganha a mecânica de entrada do tráfego (orgânico com palavra-chave: mapear o que o vídeo revelou e escondeu). Fase 4 ganha as regras de imagem nova (só horizontal/quadrada, poucas e estratégicas, encruzilhada com cor, hero coerente com a headline, consistência do avatar, pacote de prompts), oferta clara com foto do produto e do concorrente + preço por dia + miniaturas nos bundles. Template: blocos `faq`, `compare` com imagem, `price` com miniatura, `img` com `sq`/`ifMissing`, imagem ausente pulada, `tools/prep-img.mjs`. |
 | 1.0 | 2026-09-14 | Criada a partir do 1º advertorial feito com o processo completo (SlimSoda · AV_001 Jenny · Personal Story / Exposé em peer trust). Inclui a revisão 1 do Erick: visual no design system do ADV1 da marca (Poppins/Bitter, azul #0C2E5C, CTA verde), depoimentos em grade com imagem menor ao lado do texto, selo de garantia na página. **Só um formato testado até aqui** — Listicle, Amplificador, Híbrido e ângulos de autoridade ainda sem peça própria. |

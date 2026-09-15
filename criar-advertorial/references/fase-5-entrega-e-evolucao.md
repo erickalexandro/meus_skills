@@ -14,7 +14,7 @@
 ## Revisão com o Erick
 
 - Mudança de copy → `data.js`. Mudança visual → CSS. Rebuild + conferência visual a cada rodada.
-- Quando ele pedir o **checklist**, use o do hub (`Copy para advertorial Masterclass.md`) bloco a bloco: para cada item, veredito (ok / fraco / ausente), evidência na página e a correção proposta — e aplique as correções aprovadas.
+- Quando ele pedir **checklist, análise, nota, nova rodada, QA ou entrega**, use a skill **`revisar-advertorial`** (13 alavancas com nota e prioridade, sugestões com copy pronta, pacote de imagens, QA pré-entrega e fluxo Drive + ClickUp). O checklist bloco a bloco do hub continua servindo para o diagnóstico rápido de uma versão anterior na fase 1.
 - Cada correção do Erick é um dado de aprendizado (ver abaixo). Não é só "arrumar a página".
 
 ## Como a skill melhora (obrigatório ao fim de cada peça ou rodada de revisão)
