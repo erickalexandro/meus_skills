@@ -32,6 +32,8 @@ Fonte: memórias `regras-de-copy-ond.md` e `compliance-slimsoda-nao-e-regra-da-o
 - [ ] Mecanismo explicável numa frase e compatível com quem fala?
 - [ ] O que é do produto do original (receita, mecanismo, promessa) foi trocado?
 - [ ] `angulo` (#N), `formato`, `publicoFatia` e `ctaKeyword` preenchidos?
+- [ ] Primary text no molde da R04 (hook, "Comment RECIPE below and follow me to see:", 3 ✅ de fórmulas diferentes)?
+- [ ] Cada anúncio da leva com argumento e prova diferentes (R05), e a tabela "Já usados" atualizada?
 
 ## Regras aprendidas (feedback do Copy App, edições na página e métricas)
 
@@ -40,3 +42,15 @@ Formato: `R0N · [escopo] · regra · origem`. Prevalecem sobre as regras fixas.
 - **R01 · geral** · CTA no meio **só em copy acima de 50 s**; até 50 s, só o CTA final. · origem: Erick sobre o AD02 da leva 01 do AV_001 (CV-15, ~49 s), 23/09/2026.
 - **R02 · geral** · A modelagem **segue os mesmos blocos da referência**; não se acrescenta bloco (aterrissagem, fascination, mecanismo) que a referência não tem, encaixa-se dentro dos blocos existentes. · origem: Erick sobre o AD02, 23/09/2026 (a v1 tinha 9 blocos pra uma referência de 6).
 - **R03 · Copy App** · Todo anúncio sobe com ângulo numerado, formato, fatia de público e palavra-chave. · origem: pedido do Erick, 23/09/2026.
+- **R04 · primary text** · Curto, sempre neste molde (modelo escrito pelo Erick no ADS_002 do AV_001):
+  ```
+  <hook de 1 linha: curiosidade, conspiração, permissão ou qualificação do público>
+
+  Comment RECIPE below and follow me to see:
+
+  ✅ <fascination 1>
+  ✅ <fascination 2>
+  ✅ <fascination 3>
+  ```
+  3 fascinations fortes e curiosas, que deem vontade de comentar pra descobrir o que está escondido; cada uma de uma fórmula diferente (skill `gerador-de-bullets`), com parênteses de reforço quando couber, e testando ângulos novos a cada leva. Pode usar prova da VSL (Oprah, a doutora). Sem CTA repetido no fim. · origem: feedback no Copy App (ADS_002 do AV_001) + edição do Erick no mesmo anúncio, 23/09/2026.
+- **R05 · leva** · Variar ângulo, **prova e argumento** entre os anúncios da leva; não repetir o mesmo argumento (ex.: "a versão online dura poucas horas + ingrediente secreto") em vários anúncios. Consultar `banco-de-argumentos.md` (Biblioteca de cartas + "Já usados") e atualizar a tabela ao fim da leva. · origem: feedback no Copy App, 23/09/2026.

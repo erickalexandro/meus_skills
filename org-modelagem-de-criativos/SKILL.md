@@ -23,14 +23,15 @@ Quando o Erick manda "escolhe do swipe", a escolha de referência é sua: filtra
 
 O Erick ensina esta skill de três jeitos. Os três são lidos **antes** de escrever qualquer leva:
 1. **Feedback escrito no Copy App** (campo "Feedback desta copy" em cada anúncio + aba `#feedback`): `ArtifactData query` em `feedback` com `status == "novo"`.
-2. **Edições que ele fez direto na copy**: `ArtifactData query` em `ads` do avatar; todo doc com `updatedAt` preenchido foi mexido na página. Comparar com o snapshot da leva (`Claude Workspace/OND-organic/Copy App — snapshots/<levaId>.json` no vault) e entender o que mudou e por quê.
+2. **Edições que ele fez direto na copy**: `ArtifactData query` em `ads` com `out_dir` numa pasta do worktree, depois `node scripts/diff-edicoes.js <snapshot> <pasta>/ads` (versão acima da que você subiu = mexido por ele). Depois de processar, regravar o snapshot com `node scripts/make-snapshots.js <pasta>/ads <pasta de snapshots do vault>`. Detalhe: comparar com o snapshot da leva (`Claude Workspace/OND-organic/Copy App — snapshots/<levaId>.json` no vault) e entender o que mudou e por quê.
 3. **Feedback no chat.**
 
 Para cada item: aplicar na leva atual; se é regra (repetiu em 2 anúncios, ou veio em tom de regra, ou corrige a estrutura), registrar em `references/regras-e-qa.md` › Regras aprendidas (`R0N · escopo · regra · origem`), commitar a skill e recopiar pra `~/.claude/skills/`. Marcar o feedback como `lido`. Na entrega, dizer quais regras novas entraram.
 
 Depois:
 1. **Regras**: `references/regra-do-editor.md` e `references/regras-e-qa.md` inteiros (as Regras aprendidas prevalecem) + `Aprendizado de copy — SlimSoda.md` (Regras ativas) no vault.
-2. **Vocabulário da VSL**: briefing 2.0, seções 6.2 (nomes chiclete), 8.6 (VOC), 11 (consciência) e 12 (o que o ad planta). Um nome por conceito.
+2. **Vocabulário da VSL**: briefing 2.0, seções 6.2 (nomes chiclete), 8.1 (Won't Tell), 8.6 (VOC), 11 (consciência) e 12 (o que o ad planta). Um nome por conceito.
+2b. **Argumentos e provas (R05)**: `references/banco-de-argumentos.md`. Escolha um argumento central e uma prova **diferentes** pra cada anúncio da leva, puxando da **Biblioteca de cartas** do vault (`Swipe/Cartas antigas/Nichos/Emagrecimento/`: headlines, bullets, analogias, provas sociais e de mídia) e da seção "Ainda não usados". Pra fascinations, carregue a skill `gerador-de-bullets`.
 3. **Avatar**: `avatars` no Copy App + `avatars` no Supabase do OPS-organic (projeto `czvscrixfrksgeucecdc`: `code, name, age, archetype`; as imagens do kit ficam em `kit->'_imageUrl'`, base64, então salvar em arquivo e abrir pra ver cenário e visual). A voz e a situação de vida do avatar mandam na escolha das palavras.
 
 ## Fluxo por anúncio
@@ -43,7 +44,7 @@ Depois:
 | 4 | Encaixar a persuasão **dentro** dos blocos (abaixo); decidir o CTA pela duração estimada (≤ 50 s: só final; > 50 s: meio + final) | — |
 | 5 | Contar de novo. Passou do alvo: cortar. Faltou: completar com causa/qualificação, nunca com enfeite | contagem final |
 | 6 | **PT**: tradução fiel pra revisão (não é outra copy) | hookPT, bodyPT, ctaFinalPT |
-| 7 | **Primary text** (legenda do post): 1–2 linhas + RECIPE | primaryTextEN/PT |
+| 7 | **Primary text** no molde da R04: hook de 1 linha → "Comment RECIPE below and follow me to see:" → 3 fascinations ✅ (skill `gerador-de-bullets`, fórmulas diferentes, inspiração na Biblioteca de cartas) | primaryTextEN/PT |
 | 8 | **Briefing** completo (modelo abaixo) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
 | 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
 | 10 | Subir no Copy App (`references/copy-app.md`), salvar o **snapshot** da leva no vault, **criar os cards em Roteiro no pipeline do OPS-organic** (mesma referência) e entregar: tabela nomenclatura · referência · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
@@ -66,7 +67,7 @@ Se não couber, cortar palavras dentro do bloco, nunca apagar um bloco nem estou
 | `hookEN/PT` | Só o gancho falado |
 | `bodyEN/PT` | Da aterrissagem até antes do CTA final, com o CTA 1 dentro. **Só fala**: sem colchetes, sem direção de cena |
 | `ctaFinalEN/PT` | O fecho falado |
-| `primaryTextEN/PT` | Legenda do post |
+| `primaryTextEN/PT` | Legenda do post no molde da R04 (hook · "Comment RECIPE below and follow me to see:" · 3 ✅) |
 | `refChars` | Número: caracteres da fala da referência (a página calcula o %) |
 | `ctaKeyword` | Palavra-chave comentada (RECIPE), mostrada na caixa Edição |
 | `angulo` · `formato` · `publicoFatia` | Caixa "Informações da copy": `#N Nome (secundário: #N Nome)` · formato da Biblioteca + cena · quem, idade, situação vivida, o que já tentou |
