@@ -58,7 +58,9 @@ Tamanho: fala da referência = <N> caracteres · <duração> · consciência <n>
 Tipo de modelagem recomendado: preguiçosa | estudiosa | crazy | nicho primo — e por quê
 Manter intacto: <gancho verbal/visual, frase de aterrissagem, ritmo, formato — o "coração">
 Trocar obrigatoriamente: <mecanismo, produto/receita, persona, CTA, o que não cabe na oferta>
-Esqueleto (bloco a bloco): 
+Ângulo: #N Nome (numeração em org-modelagem-de-criativos/references/angulos-numerados.md)
+Blocos da referência: <N> — a modelagem mantém os mesmos blocos, na mesma ordem e função
+Esqueleto (bloco a bloco, numerado como a referência): 
   B1 [0-3s] Gancho — <elemento> — modelo: "<frase original>" → função
   B2 ...
   ... até o CTA final

@@ -1,44 +1,42 @@
 # Regras da OND e QA antes de subir
 
-Fonte: memórias `regras-de-copy-ond.md` e `compliance-slimsoda-nao-e-regra-da-ond.md`, `Revisão de ads — erros comuns e correções.md`, `Blueprint da operação orgânica.md` e briefing 2.0. Se o vault mudar, vale o vault.
+Fonte: memórias `regras-de-copy-ond.md` e `compliance-slimsoda-nao-e-regra-da-ond.md`, `Revisão de ads — erros comuns e correções.md`, `Blueprint da operação orgânica.md`, briefing 2.0 e o feedback do Erick (seção Regras aprendidas, que **prevalece** sobre as fixas quando conflitar). Se o vault mudar, vale o vault.
 
 ## Regras fixas
 
 0. **Regra do editor manda no tamanho** (`regra-do-editor.md`): caracteres da copy = da referência (até +20% se o público é pouco consciente), máx. 12 cenas de até 24 palavras, até 1:36, só fala limpa.
-1. **CTA duplo, adaptado ao ângulo.**
-   - **CTA 1 (curto)**, no meio da explicação (nos vídeos ≥ 40 s, entre **20 e 30 s**). Uma frase, e volta pro conteúdo. Adaptado ao ângulo: *"If you want the exact recipe I use, comment RECIPE and follow me."*
-   - Logo depois do CTA 1: **fascination + quebra de objeção** (ex.: "And no, it's not the version going around online. That one wears off in a few hours.").
-   - **CTA final** no fecho: "comment RECIPE and follow me" + o que ela ganha (o vídeo) + urgência leve + quebra de objeção, em close humanizado. O tamanho do fecho segue o que cabe na referência.
-1b. **Frase de aterrissagem** logo depois do hook, voltada pra ela.
-1c. **Benefício funcional + sentimental** (a calça que fecha + a vergonha que some), nunca poético.
-1d. **Sem promessa médica** (não diagnosticar, não prometer cura, não falar em tratar doença).
-2. **Congruência com a VSL.** O mecanismo da VSL aparece no texto (bicarbonato / versão correta / o ingrediente que falta / intestino ácido), nem que seja como "o ingrediente secreto". A promessa do CTA é **o vídeo**: "the video explains it better than I can".
-3. **Palavra-chave**: **RECIPE** é o padrão desde 23/09/2026 ("comment RECIPE and follow me"). Trocar só se o Erick pedir.
-4. **Follow** junto da palavra-chave, senão a DM pode ser bloqueada.
-5. **Produto e pote nunca aparecem** (nem na fala, nem na mão, nem no briefing de cena).
-6. **Alavancas de compliance** (citar Ozempic/Mounjaro, número de peso, comparação de custo) **podem** ser usadas com cautela quando o ângulo pedir. Marcar na entrega quais anúncios usam, pra dar pra comparar a performance entre os dois grupos.
-7. **Escala horizontal**: o mesmo hook + body roda em IG/FB/TikTok, trocando só o CTA quando a plataforma exigir.
+1. **Espelho de blocos (R02).** A copy tem **os mesmos blocos da referência, na mesma ordem e com a mesma função** (hook, receita, ritual, benefício, isca, follow…). Troca-se o recheio de cada bloco, não a arquitetura. As outras regras (benefício sentimental, objeção, mecanismo da VSL) entram **dentro** dos blocos que já existem, não como blocos novos. Se a referência não tem aterrissagem, o primeiro bloco do corpo faz esse papel.
+2. **CTA pela duração da copy (R01).**
+   - **Até 50 s: só o CTA final**, no bloco de CTA da referência. Sem CTA no meio.
+   - **Acima de 50 s: CTA no meio + CTA final.** O do meio é curto, adaptado ao ângulo, colado no fim de um bloco perto dos 20–30 s (*"If you want my exact recipe, comment RECIPE and follow me."*). Logo depois vem **fascination + quebra de objeção**, no bloco seguinte.
+   - **CTA final:** "comment RECIPE and follow me" + o que ela ganha (o vídeo / a versão completa) + quebra de objeção, se couber no bloco.
+3. **Benefício funcional + sentimental** (a calça que fecha + a vergonha que some), nunca poético.
+4. **Sem promessa médica** (não diagnosticar, não prometer cura, não falar em tratar doença; nada de diabetes, insulina ou "toxinas").
+5. **Congruência com a VSL.** O mecanismo da VSL aparece no texto (bicarbonato, a versão da internet × a correta, o ingrediente que falta, intestino ácido, células que adormeceram), nem que seja como "o ingrediente secreto".
+6. **Palavra-chave**: **RECIPE** é o padrão desde 23/09/2026. Trocar só se o Erick pedir. Sempre preencher `ctaKeyword`.
+7. **Follow** junto da palavra-chave, senão a DM pode ser bloqueada.
+8. **Produto e pote nunca aparecem** (nem na fala, nem na mão, nem no briefing de cena).
+9. **Alavancas de compliance** (Ozempic/Mounjaro, número de peso, comparação de custo) podem ser usadas com cautela quando o ângulo pedir; marcar no briefing quais anúncios usam.
+10. **Infos da copy obrigatórias (R03):** `angulo` com número (`angulos-numerados.md`), `formato` (nome da Biblioteca de formatos + detalhe da cena), `publicoFatia` (quem, idade, situação vivida, o que já tentou).
 
 ## Checklist de QA (tudo ✅ ou reescreve)
 
 - [ ] Checklist do editor inteiro (`regra-do-editor.md`)?
-- [ ] CTA 1 no meio, adaptado ao ângulo, seguido de fascination + quebra de objeção?
+- [ ] Mesmos blocos da referência, mesma ordem, mesma função? (conferir bloco a bloco com o pacote)
+- [ ] Copy ≤ 50 s sem CTA no meio? Copy > 50 s com CTA no meio + fascination/objeção logo depois?
 - [ ] CTA final com "comment RECIPE and follow me" + o que ela ganha?
-- [ ] Frase de aterrissagem depois do hook? Benefício funcional + sentimental?
+- [ ] Benefício funcional + sentimental, cru e visualizável?
 - [ ] Nenhuma promessa médica?
 - [ ] O bicarbonato / o mecanismo da VSL aparece no texto?
-- [ ] A palavra-chave é RECIPE (ou a que o Erick pediu)?
-- [ ] Gancho com uma frase e uma ideia, que qualifica o público pela situação vivida?
-- [ ] Frase de aterrissagem voltada pra ela (não pra quem fala)?
-- [ ] Benefícios específicos e visualizáveis, nada poético?
-- [ ] Mecanismo explicável numa frase e compatível com quem fala (dona de casa não fala "DPP-4" sem traduzir)?
-- [ ] O esqueleto do pacote foi respeitado (mesma ordem de elementos)?
+- [ ] Gancho validado da referência mantido (adaptado só no necessário)?
+- [ ] Mecanismo explicável numa frase e compatível com quem fala?
 - [ ] O que é do produto do original (receita, mecanismo, promessa) foi trocado?
-- [ ] Nomes chiclete iguais aos da VSL, sem nome paralelo?
-- [ ] O CTA diz o que ela ganha, não o que tem lá dentro?
+- [ ] `angulo` (#N), `formato`, `publicoFatia` e `ctaKeyword` preenchidos?
 
-## Regras aprendidas (feedback do Copy App e métricas)
+## Regras aprendidas (feedback do Copy App, edições na página e métricas)
 
-Formato: `R01 · [escopo: geral | AV_00X | formato] · regra em uma linha · origem (feedback/anúncio, data)`
+Formato: `R0N · [escopo] · regra · origem`. Prevalecem sobre as regras fixas.
 
-*Vazio — nasce do primeiro feedback revisado.*
+- **R01 · geral** · CTA no meio **só em copy acima de 50 s**; até 50 s, só o CTA final. · origem: Erick sobre o AD02 da leva 01 do AV_001 (CV-15, ~49 s), 23/09/2026.
+- **R02 · geral** · A modelagem **segue os mesmos blocos da referência**; não se acrescenta bloco (aterrissagem, fascination, mecanismo) que a referência não tem, encaixa-se dentro dos blocos existentes. · origem: Erick sobre o AD02, 23/09/2026 (a v1 tinha 9 blocos pra uma referência de 6).
+- **R03 · Copy App** · Todo anúncio sobe com ângulo numerado, formato, fatia de público e palavra-chave. · origem: pedido do Erick, 23/09/2026.

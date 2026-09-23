@@ -14,7 +14,10 @@
 A página tem **"Copiar fala (EN)"**, que copia só hook + body + CTA final (sem rótulos): é o que vai pro Motion Flow. Campos adicionados em 23/09/2026 junto com a regra do editor.
 | `feedback` | auto-id | text, context (nomenclatura ou vazio), createdAt, status (`novo`/`lido`) |
 
-Campos antigos que ainda existem em docs velhos mas **não aparecem na UI** (não recriar sem o Erick pedir): publicoFatia, angulo, formato, briefingUrl, ctaKeyword, usaAlavancaCompliance, checklist.
+**Layout da página do anúncio (v5, 23/09/2026):** coluna lateral com duas caixas: **Edição** (`avatarUsado`, `ctaKeyword` "Palavra-chave comentada", `videoModeladoUrl`, `finalVideoUrl`) e **Informações da copy** (`angulo` com número, `formato`, `publicoFatia`). À direita, a copy (hook, body, CTA final, primary text), com os campos crescendo na altura do texto, sem scroll. Embaixo, o briefing.
+Campos antigos que seguem fora da UI (não recriar sem o Erick pedir): briefingUrl, usaAlavancaCompliance, checklist.
+
+**Snapshot:** depois de subir uma leva, salvar os docs enviados em `AI agents/Claude Workspace/OND-organic/Copy App — snapshots/<levaId>.json` no vault. É o "antes" pra comparar com as edições que o Erick fizer na página.
 
 ## Passo a passo pra subir uma leva
 

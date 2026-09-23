@@ -19,32 +19,45 @@ A copy vira vídeo no Motion Flow **em cima do vídeo de referência**. Por isso
 
 Quando o Erick manda "escolhe do swipe", a escolha de referência é sua: filtrar pelo avatar (arquétipo, cenário do kit), pela faixa de tempo, por nicho próximo de emagrecimento e pela métrica, e variar o ângulo entre os anúncios da leva.
 
-## Antes de escrever (sempre)
+## Antes de escrever (sempre): o ciclo de feedback
 
-1. **Feedback pendente do Copy App**: `ArtifactData query` em `feedback` com `status == "novo"`. Aplicar e marcar `lido`.
-2. **Regras**: `references/regra-do-editor.md` e `references/regras-e-qa.md` inteiros + `Aprendizado de copy — SlimSoda.md` (Regras ativas) no vault.
-3. **Vocabulário da VSL**: briefing 2.0, seções 6.2 (nomes chiclete), 8.6 (VOC), 11 (consciência) e 12 (o que o ad planta). Um nome por conceito.
-4. **Avatar**: `avatars` no Copy App + `avatars` no Supabase do OPS-organic (projeto `czvscrixfrksgeucecdc`: `code, name, age, archetype`; as imagens do kit ficam em `kit->'_imageUrl'`, base64, então salvar em arquivo e abrir pra ver cenário e visual). A voz e a situação de vida do avatar mandam na escolha das palavras.
+O Erick ensina esta skill de três jeitos. Os três são lidos **antes** de escrever qualquer leva:
+1. **Feedback escrito no Copy App** (campo "Feedback desta copy" em cada anúncio + aba `#feedback`): `ArtifactData query` em `feedback` com `status == "novo"`.
+2. **Edições que ele fez direto na copy**: `ArtifactData query` em `ads` do avatar; todo doc com `updatedAt` preenchido foi mexido na página. Comparar com o snapshot da leva (`Claude Workspace/OND-organic/Copy App — snapshots/<levaId>.json` no vault) e entender o que mudou e por quê.
+3. **Feedback no chat.**
+
+Para cada item: aplicar na leva atual; se é regra (repetiu em 2 anúncios, ou veio em tom de regra, ou corrige a estrutura), registrar em `references/regras-e-qa.md` › Regras aprendidas (`R0N · escopo · regra · origem`), commitar a skill e recopiar pra `~/.claude/skills/`. Marcar o feedback como `lido`. Na entrega, dizer quais regras novas entraram.
+
+Depois:
+1. **Regras**: `references/regra-do-editor.md` e `references/regras-e-qa.md` inteiros (as Regras aprendidas prevalecem) + `Aprendizado de copy — SlimSoda.md` (Regras ativas) no vault.
+2. **Vocabulário da VSL**: briefing 2.0, seções 6.2 (nomes chiclete), 8.6 (VOC), 11 (consciência) e 12 (o que o ad planta). Um nome por conceito.
+3. **Avatar**: `avatars` no Copy App + `avatars` no Supabase do OPS-organic (projeto `czvscrixfrksgeucecdc`: `code, name, age, archetype`; as imagens do kit ficam em `kit->'_imageUrl'`, base64, então salvar em arquivo e abrir pra ver cenário e visual). A voz e a situação de vida do avatar mandam na escolha das palavras.
 
 ## Fluxo por anúncio
 
 | # | Passo | Saída |
 |---|---|---|
-| 1 | Contar os caracteres da fala da referência e definir o alvo: consciente = 0 a +5%; pouco consciente = até +20% | `refChars` + faixa-alvo |
-| 2 | Mapear as cenas da referência (máx. 12), cada uma com o que aparece e a função | mapa de cenas |
-| 3 | Escrever o **EN** cena a cena: cada frase casa com o que a referência mostra naquele trecho, máx. 24 palavras por cena | hook, body, CTA final |
-| 4 | Aplicar a estrutura de persuasão (abaixo) dentro do tamanho | — |
+| 1 | Contar os caracteres da fala da referência e definir o alvo: consciente = 0 a +5%; média = até +12%; pouco consciente = até +20% | `refChars` + faixa-alvo |
+| 2 | **Numerar os blocos da referência** (cada frase/ideia com função própria) e mapear o que aparece em cada um | lista de blocos |
+| 3 | Escrever o **EN bloco a bloco**: mesmo nº de blocos, mesma ordem, mesma função; cada frase casa com a cena daquele bloco; máx. 24 palavras por cena (bloco longo vira 2 cenas) | hook, body, CTA final |
+| 4 | Encaixar a persuasão **dentro** dos blocos (abaixo); decidir o CTA pela duração estimada (≤ 50 s: só final; > 50 s: meio + final) | — |
 | 5 | Contar de novo. Passou do alvo: cortar. Faltou: completar com causa/qualificação, nunca com enfeite | contagem final |
 | 6 | **PT**: tradução fiel pra revisão (não é outra copy) | hookPT, bodyPT, ctaFinalPT |
 | 7 | **Primary text** (legenda do post): 1–2 linhas + RECIPE | primaryTextEN/PT |
-| 8 | **Briefing** completo (modelo abaixo) | `briefing` |
-| 9 | **QA**: checklist do editor + checklist de copy. Qualquer falha, reescrever | ok |
-| 10 | Subir no Copy App (`references/copy-app.md`) e entregar: tabela nomenclatura · referência · chars ref × copy (+%) · gancho · link | resposta |
+| 8 | **Briefing** completo (modelo abaixo) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
+| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
+| 10 | Subir no Copy App (`references/copy-app.md`), salvar o **snapshot** da leva no vault e entregar: tabela nomenclatura · referência · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
 
-## Estrutura de persuasão dentro do tamanho
+## Persuasão dentro do espelho de blocos
 
-Hook (1 frase, 1 ideia, gancho validado da referência adaptado) → **frase de aterrissagem** voltada pra ela → dor/situação vivida → benefício **funcional + sentimental** (cru, visualizável) → **CTA 1 adaptado ao ângulo** (curto; nos vídeos ≥ 40 s, perto dos 20–30 s) → **fascination + quebra de objeção** → virada/mecanismo com o vocabulário da VSL (a versão da internet × a correta, o ingrediente que falta, intestino ácido, células que adormeceram) → **CTA final**: "comment RECIPE and follow me" + o que ela ganha (o vídeo) + urgência leve.
-Referência curta demais pra tudo isso: priorizar hook, aterrissagem, benefício, CTA, fascination/objeção; cortar o que não cabe; nunca estourar o tamanho.
+A arquitetura é a da referência (R02). Dentro dela, cada bloco recebe o recheio mais forte possível:
+- **Hook:** o gancho validado da referência, adaptado só no necessário (1 ideia, qualifica pela situação vivida).
+- **Blocos de demonstração/receita:** a receita vira o bicarbonato; mantêm o mesmo passo a passo e o mesmo tipo de cena.
+- **Bloco de benefício:** funcional + sentimental, cru (a calça que fecha, os netos tirando foto).
+- **Bloco de mecanismo:** vocabulário da VSL (ácido no intestino, células que adormeceram, a versão da internet dura poucas horas).
+- **Bloco de autoridade/inimigo/transparência:** mantém a função (tradição, "o médico nunca contou", "a maioria erra a quantidade").
+- **CTA:** pela duração (R01). Até 50 s, o CTA fica só no bloco de CTA da referência, com a objeção/isca dentro dele. Acima de 50 s, o CTA do meio fecha um bloco perto dos 20–30 s e a fascination/objeção entra no bloco seguinte.
+Se não couber, cortar palavras dentro do bloco, nunca apagar um bloco nem estourar o tamanho.
 
 ## O que cada campo recebe
 
@@ -55,6 +68,8 @@ Referência curta demais pra tudo isso: priorizar hook, aterrissagem, benefício
 | `ctaFinalEN/PT` | O fecho falado |
 | `primaryTextEN/PT` | Legenda do post |
 | `refChars` | Número: caracteres da fala da referência (a página calcula o %) |
+| `ctaKeyword` | Palavra-chave comentada (RECIPE), mostrada na caixa Edição |
+| `angulo` · `formato` · `publicoFatia` | Caixa "Informações da copy": `#N Nome (secundário: #N Nome)` · formato da Biblioteca + cena · quem, idade, situação vivida, o que já tentou |
 | `briefing` | Texto em PT pro Erick e pro editor (modelo abaixo) |
 | `avatarUsado` · `videoModeladoUrl` | Nome do avatar · link do vídeo de referência |
 
@@ -81,6 +96,8 @@ ALERTAS PRO EDITOR: <o que não mostrar: pote, outra pessoa, ambiente novo; cuid
 
 | Erro | Correção |
 |---|---|
+| Acrescentar blocos que a referência não tem (aterrissagem, fascination, mecanismo extra) | Espelho de blocos: encaixar dentro dos blocos existentes (R02) |
+| CTA no meio em copy curta | Até 50 s, só o CTA final (R01) |
 | Copy bem maior que a referência "porque ficou boa" | Cortar até o alvo; o excedente só entra se eleva consciência/qualifica |
 | Direção de cena ou colchetes dentro da fala | Fala limpa; cena vai no briefing |
 | Números em algarismo, "$", "%", travessão | Por extenso, sem símbolo |

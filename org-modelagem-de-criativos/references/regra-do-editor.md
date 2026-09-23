@@ -31,7 +31,7 @@ Contar com PowerShell: `("<texto>").Length`, ou somar `hookEN + " " + bodyEN + "
 
 ## As outras regras do Erick continuam valendo
 
-Frase de aterrissagem depois do hook · benefício funcional + sentimental · CTA 1 adaptado ao ângulo · fascination + quebra de objeção depois do CTA 1 · o pote nunca aparece · sem promessa médica · **"comment RECIPE and follow me"**.
+Frase de aterrissagem depois do hook (quando a referência tem esse bloco) · benefício funcional + sentimental · CTA 1 adaptado ao ângulo **só em copy acima de 50 s** (R01) · fascination + quebra de objeção depois do CTA 1 · o pote nunca aparece · sem promessa médica · **"comment RECIPE and follow me"** · **mesmos blocos da referência** (R02). Detalhe em `regras-e-qa.md`.
 
 ## Checklist do editor (antes de entregar)
 
