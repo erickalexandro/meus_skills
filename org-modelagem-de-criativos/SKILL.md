@@ -46,7 +46,7 @@ Depois:
 | 7 | **Primary text** (legenda do post): 1–2 linhas + RECIPE | primaryTextEN/PT |
 | 8 | **Briefing** completo (modelo abaixo) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
 | 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
-| 10 | Subir no Copy App (`references/copy-app.md`), salvar o **snapshot** da leva no vault e entregar: tabela nomenclatura · referência · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
+| 10 | Subir no Copy App (`references/copy-app.md`), salvar o **snapshot** da leva no vault, **criar os cards em Roteiro no pipeline do OPS-organic** (mesma referência) e entregar: tabela nomenclatura · referência · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
 
 ## Persuasão dentro do espelho de blocos
 

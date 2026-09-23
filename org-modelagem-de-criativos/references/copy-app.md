@@ -29,7 +29,15 @@ Campos antigos que seguem fora da UI (não recriar sem o Erick pedir): briefingU
 
 Leva de **exemplo** (`exemplo: true`, `AV_001__leva-exemplo-01`): quando a primeira leva real do AV_001 subir, perguntar se pode apagar.
 
-## Feedback
+## Subir no pipeline do OPS-organic (depois do Copy App)
+
+Cada anúncio vira um card no estágio **Roteiro** do OPS-organic (Supabase `czvscrixfrksgeucecdc`, tabela `videos`), igual ao que o modal "Novo vídeo" cria. Se o MCP `ops-organic` estiver conectado, usar `ops_create_video`; senão, `execute_sql` com:
+- `nomenclature` (a mesma do Copy App: é a chave entre os dois sistemas), `avatar` (`AV_00X`), `avatar_id` (uuid de `avatars`), `avatar_name`, `network`, `ads_number`, `version` tirados da nomenclatura;
+- `stage = 'roteiro'`, `copy_status = 'escrevendo'` (o Erick muda pra `pre_aprovado`/`pronto` ao revisar);
+- `briefing_url` = link direto do anúncio no Copy App (`ARTIFACT_URL#<avatarId>.<levaId>.<nomenclatura>`);
+- `hook_summary` = hookEN; `body_summary` = "Ref. <id> · <ângulo> · ~<s> s · CTA";
+- `created_by` = uuid do perfil do Erick em `profiles`; `metrics` = `{targetPageId, targetPageName}` da página do avatar em `account_pages`.
+Inserir com `where not exists` pela nomenclatura (o app não permite código repetido).
 
 - Antes de escrever: `query` em `feedback` com `where: [["status","==","novo"]]`.
 - Depois de aplicar: `update` com `{status: "lido"}` + `if_version`.
