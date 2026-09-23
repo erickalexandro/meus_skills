@@ -9,7 +9,9 @@
 |---|---|---|
 | `avatars` | `AV_001`, `AV_002`, `EMMA_DAVYS`, `SOPHIA_BROWN`, `MIX` | code, pagina, nome, arquetipo, status (`in_use`/`sem_avatar`/`mix`), order |
 | `levas` | `<avatarId>__leva-<NN>` (ex.: `AV_001__leva-02`) | avatarId, label, exemplo (bool), escritoPor, data (AAAA-MM-DD), order |
-| `ads` | a **nomenclatura** inteira (`SS-HIB-AV_001-ADS_031-V_001`) | avatarId, levaId, order, avatarUsado, videoModeladoUrl, finalVideoUrl, hookEN/PT, bodyEN/PT, ctaFinalEN/PT, primaryTextEN/PT |
+| `ads` | a **nomenclatura** inteira (`SS-HIB-AV_001-ADS_031-V_001`) | avatarId, levaId, order, avatarUsado, videoModeladoUrl, finalVideoUrl, hookEN/PT, bodyEN/PT, ctaFinalEN/PT, primaryTextEN/PT, **briefing** (texto PT, painel largo embaixo da copy), **refChars** (número; a página mostra "Fala EN: X · referência: Y (+Z%)" e fica vermelha acima de +20%) |
+
+A página tem **"Copiar fala (EN)"**, que copia só hook + body + CTA final (sem rótulos): é o que vai pro Motion Flow. Campos adicionados em 23/09/2026 junto com a regra do editor.
 | `feedback` | auto-id | text, context (nomenclatura ou vazio), createdAt, status (`novo`/`lido`) |
 
 Campos antigos que ainda existem em docs velhos mas **não aparecem na UI** (não recriar sem o Erick pedir): publicoFatia, angulo, formato, briefingUrl, ctaKeyword, usaAlavancaCompliance, checklist.

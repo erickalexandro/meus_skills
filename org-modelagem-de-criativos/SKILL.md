@@ -1,65 +1,97 @@
 ---
 name: org-modelagem-de-criativos
-description: "Use quando o Erick pedir para modelar, escrever, adaptar ou criar copy/roteiro de criativos orgânicos (ORG / OND-organic, SlimSoda) a partir de uma análise, de um criativo do swipe ou de um vídeo de referência — 'modela esse', 'escreve a leva do AV_001', 'faz 5 variações desse criativo', 'sobe no Copy App' — ou quando a skill org-analise-de-criativos entregar um Pacote de modelagem. Não serve para analisar o criativo (org-analise-de-criativos) nem para advertorial."
+description: "Use quando o Erick pedir para modelar, escrever, adaptar ou criar copy/roteiro de criativos orgânicos (ORG / OND-organic, SlimSoda) a partir de uma análise, de um criativo do swipe ou de um vídeo de referência — 'modela esse', 'modela 5 do swipe pro avatar 1', 'escreve a leva do AV_001', 'faz variações desse criativo', 'sobe no Copy App' — ou quando a skill org-analise-de-criativos entregar um Pacote de modelagem. Não serve para analisar o criativo (org-analise-de-criativos) nem para advertorial."
 ---
 
 # ORG · Modelagem de criativos orgânicos
 
-Segunda metade da esteira: **Pacote de modelagem → copy EN + PT → Copy App**.
-Modelar é **manter o esqueleto validado e trocar o recheio**. O que fez o original performar (gancho, ordem dos elementos, ritmo, formato) fica. O que é do produto dele (mecanismo, receita, promessa, CTA) vira SlimSoda.
+Segunda metade da esteira: **Pacote de modelagem → copy EN + PT + briefing → Copy App → editor (Motion Flow)**.
+Modelar é **manter o esqueleto validado e trocar o recheio**. Fica o que fez o original performar: gancho, ordem dos elementos, ritmo, tipo de cena e **tamanho**. O que é do produto dele (mecanismo, receita, promessa, CTA) vira SlimSoda.
+
+A copy vira vídeo no Motion Flow **em cima do vídeo de referência**. Por isso tamanho e contexto de cena são regra dura: `references/regra-do-editor.md`.
 
 ## Entrada obrigatória (sem isso, parar e pedir)
 
-1. **Pacote de modelagem** (seção 14 da ficha `AN-<id>`). Se só houver o vídeo ou a nota do swipe, rodar antes a skill `org-analise-de-criativos`.
-2. **Briefing** com **avatar + vídeo modelado de referência + ângulo + formato** (regra da operação própria, memória `operacao-propria-ond-nando.md`). O briefing mora no Google Doc do Drive. O que faltar: perguntar em uma mensagem só, com a sugestão do pacote já preenchida pra ele só confirmar.
-3. **Nomenclatura**: `SS-<REDE>-AV_XXX-ADS_YYY-V_ZZZ` (`HIB` padrão, `FB`, `IG`). ADS continua a sequência do avatar (ver `ads` no Copy App); V sobe quando o mesmo anúncio ganha variação.
+1. **Pacote de modelagem** (seção 14 da ficha `AN-<id>`). Sem ele, rodar antes a `org-analise-de-criativos`; numa leva, uma ficha por referência.
+2. **Briefing mínimo**: **avatar + vídeo de referência + ângulo + formato** (memória `operacao-propria-ond-nando.md`).
+3. **Tempo médio de vídeo desejado para a leva.** Se o Erick não disse, **perguntar** junto com o resto que faltar, numa mensagem só (hoje o padrão é curto, 30–70 s; vai crescer). O tempo decide quais referências servem: a copy tem o tamanho da referência, e o teto é 1 min 36 s.
+4. **Nomenclatura**: `SS-<REDE>-AV_XXX-ADS_YYY-V_ZZZ` (`HIB` padrão, `FB`, `IG`). ADS continua a sequência do avatar (conferir `ads` no Copy App); V sobe quando o mesmo anúncio ganha variação.
+
+Quando o Erick manda "escolhe do swipe", a escolha de referência é sua: filtrar pelo avatar (arquétipo, cenário do kit), pela faixa de tempo, por nicho próximo de emagrecimento e pela métrica, e variar o ângulo entre os anúncios da leva.
 
 ## Antes de escrever (sempre)
 
-1. **Feedback pendente do Copy App**: `ArtifactData query` em `feedback` com `status == "novo"`. Aplicar o que vale e marcar `lido` depois de tratar. Feedback que se repete vira regra nesta skill (ver Evolução).
-2. **Regras**: `references/regras-e-qa.md` inteiro + `Aprendizado de copy — SlimSoda.md` (seções Regras ativas e Padrões validados) no vault.
-3. **Vocabulário da VSL**: briefing 2.0, seções 6.2 (nomes chiclete) e 12 (vocabulário que o ad planta). Um nome por conceito, nada de mecanismo paralelo.
-4. **Avatar**: `ArtifactData list avatars` + nota do avatar no vault. A voz e a situação de vida do avatar mandam na escolha de palavras.
+1. **Feedback pendente do Copy App**: `ArtifactData query` em `feedback` com `status == "novo"`. Aplicar e marcar `lido`.
+2. **Regras**: `references/regra-do-editor.md` e `references/regras-e-qa.md` inteiros + `Aprendizado de copy — SlimSoda.md` (Regras ativas) no vault.
+3. **Vocabulário da VSL**: briefing 2.0, seções 6.2 (nomes chiclete), 8.6 (VOC), 11 (consciência) e 12 (o que o ad planta). Um nome por conceito.
+4. **Avatar**: `avatars` no Copy App + `avatars` no Supabase do OPS-organic (projeto `czvscrixfrksgeucecdc`: `code, name, age, archetype`; as imagens do kit ficam em `kit->'_imageUrl'`, base64, então salvar em arquivo e abrir pra ver cenário e visual). A voz e a situação de vida do avatar mandam na escolha das palavras.
 
-## Fluxo
+## Fluxo por anúncio
 
 | # | Passo | Saída |
 |---|---|---|
-| 1 | Confirmar entrada (pacote + briefing + nomenclatura) | ficha de 6 linhas pro Erick: avatar · referência · ângulo · formato · palavra-chave · nº de anúncios |
-| 2 | Mapear o esqueleto: cada bloco do pacote vira um slot com função e tempo-alvo | tabela de slots |
-| 3 | Escrever o **EN primeiro** (é o que vai ao ar), slot a slot, na voz do avatar | hook, body, CTA final |
-| 4 | Dimensionar tempo: ~2,5 palavras/s falado. Body até o CTA 1 com ~45–60 palavras, pro CTA 1 cair entre 20 e 30 s | contagem por bloco |
-| 5 | Escrever o **PT** (tradução fiel, pra revisão do Erick; não é outra copy) | hookPT, bodyPT, ctaFinalPT |
-| 6 | **Primary text** (legenda do post): 1–2 linhas + palavra-chave + emoji de seta | primaryTextEN/PT |
-| 7 | **QA**: checklist de `references/regras-e-qa.md`. Qualquer item falhando, reescrever antes de subir | checklist ok |
-| 8 | **Subir no Copy App** (ver `references/copy-app.md`) | docs em `levas` e `ads` |
-| 9 | Entregar: link do anúncio no app + tabela curta (nomenclatura · gancho · palavra-chave · o que foi mantido × trocado do original) | resposta ao Erick |
+| 1 | Contar os caracteres da fala da referência e definir o alvo: consciente = 0 a +5%; pouco consciente = até +20% | `refChars` + faixa-alvo |
+| 2 | Mapear as cenas da referência (máx. 12), cada uma com o que aparece e a função | mapa de cenas |
+| 3 | Escrever o **EN** cena a cena: cada frase casa com o que a referência mostra naquele trecho, máx. 24 palavras por cena | hook, body, CTA final |
+| 4 | Aplicar a estrutura de persuasão (abaixo) dentro do tamanho | — |
+| 5 | Contar de novo. Passou do alvo: cortar. Faltou: completar com causa/qualificação, nunca com enfeite | contagem final |
+| 6 | **PT**: tradução fiel pra revisão (não é outra copy) | hookPT, bodyPT, ctaFinalPT |
+| 7 | **Primary text** (legenda do post): 1–2 linhas + RECIPE | primaryTextEN/PT |
+| 8 | **Briefing** completo (modelo abaixo) | `briefing` |
+| 9 | **QA**: checklist do editor + checklist de copy. Qualquer falha, reescrever | ok |
+| 10 | Subir no Copy App (`references/copy-app.md`) e entregar: tabela nomenclatura · referência · chars ref × copy (+%) · gancho · link | resposta |
 
-Variações: para "N variações", manter o body e variar o **gancho** primeiro (3 ganchos por anúncio é o padrão). Depois varie a abertura segmentada e só então o formato. Nunca mexer no coração do que está escalando.
+## Estrutura de persuasão dentro do tamanho
+
+Hook (1 frase, 1 ideia, gancho validado da referência adaptado) → **frase de aterrissagem** voltada pra ela → dor/situação vivida → benefício **funcional + sentimental** (cru, visualizável) → **CTA 1 adaptado ao ângulo** (curto; nos vídeos ≥ 40 s, perto dos 20–30 s) → **fascination + quebra de objeção** → virada/mecanismo com o vocabulário da VSL (a versão da internet × a correta, o ingrediente que falta, intestino ácido, células que adormeceram) → **CTA final**: "comment RECIPE and follow me" + o que ela ganha (o vídeo) + urgência leve.
+Referência curta demais pra tudo isso: priorizar hook, aterrissagem, benefício, CTA, fascination/objeção; cortar o que não cabe; nunca estourar o tamanho.
 
 ## O que cada campo recebe
 
 | Campo | Conteúdo |
 |---|---|
-| `hookEN/PT` | Só o gancho falado (1 frase, 1 ideia) + indicação do gancho visual entre colchetes na linha de baixo |
-| `bodyEN/PT` | Da frase de aterrissagem até antes do CTA final, **com o CTA 1 dentro**. Indicações de B-roll/tela entre colchetes `[ ]` em linha própria |
-| `ctaFinalEN/PT` | CTA 2 completo: follow + palavra-chave + o que ela ganha (o vídeo) + urgência/escassez + quebra de objeção |
+| `hookEN/PT` | Só o gancho falado |
+| `bodyEN/PT` | Da aterrissagem até antes do CTA final, com o CTA 1 dentro. **Só fala**: sem colchetes, sem direção de cena |
+| `ctaFinalEN/PT` | O fecho falado |
 | `primaryTextEN/PT` | Legenda do post |
-| `avatarUsado` | Nome do avatar (obrigatório na página MIX) |
-| `videoModeladoUrl` | Link do vídeo de referência (o do swipe ou o que o Erick mandou) |
+| `refChars` | Número: caracteres da fala da referência (a página calcula o %) |
+| `briefing` | Texto em PT pro Erick e pro editor (modelo abaixo) |
+| `avatarUsado` · `videoModeladoUrl` | Nome do avatar · link do vídeo de referência |
+
+## Modelo do briefing (campo `briefing`)
+
+```
+AVATAR: <nome, código, idade, arquétipo> · cenário: <do kit>
+REFERÊNCIA: <id do swipe> · <link> · <duração> · <métricas>
+ÂNGULO: <ângulo + big idea em uma frase>
+FORMATO: <tipo de vídeo> · público/consciência: <nível 1–5 e por quê>
+TAMANHO: referência <N> caracteres · copy <M> (+X%) · justificativa se passou
+ESTRUTURA INVISÍVEL: <em uma linha>
+O QUE FOI MANTIDO DA REFERÊNCIA: <gancho, sequência, tipo de cena>
+O QUE FOI TROCADO: <mecanismo, receita, promessa, CTA>
+MAPA DE CENAS (máx. 12): 
+  C1 · <o que a referência mostra> → fala: "<trecho da copy>"
+  C2 ...
+CTA: RECIPE + follow · CTA 1 na cena <n> · CTA final na cena <n>
+CONGRUÊNCIA COM A VSL: <termos plantados>
+ALERTAS PRO EDITOR: <o que não mostrar: pote, outra pessoa, ambiente novo; cuidados>
+```
 
 ## Erros comuns
 
 | Erro | Correção |
 |---|---|
-| Reescrever o gancho validado "pra ficar melhor" | O gancho do original é a variável mais validada: manter e adaptar só o necessário; criar alternativas como variação, não como substituto |
-| Copiar o mecanismo do original (ex.: "toxinas", uso tópico) | Mecanismo é sempre o da VSL (intestino ácido, células que adormeceram, a versão correta) |
-| Mostrar ou citar o SlimSoda | O ad vende **o vídeo**, não o produto |
-| Benefício poético de IA ("sentir-se leve de novo") | Benefício cru e visualizável (a calça que fecha, o marido perguntando) |
-| Só um CTA no fim | CTA duplo sempre |
-| Palavra-chave longa ou em duas palavras | UMA palavra curta |
-| Subir sem briefing completo | Parar e pedir: avatar, referência, ângulo e formato |
+| Copy bem maior que a referência "porque ficou boa" | Cortar até o alvo; o excedente só entra se eleva consciência/qualifica |
+| Direção de cena ou colchetes dentro da fala | Fala limpa; cena vai no briefing |
+| Números em algarismo, "$", "%", travessão | Por extenso, sem símbolo |
+| Frase de 30 palavras | Quebrar: máximo de 24 por cena |
+| Copy falando de algo que a referência não mostra | Reescrever o trecho pra casar com a cena daquele momento |
+| Reescrever o gancho validado "pra melhorar" | Manter e adaptar; alternativas entram como variação |
+| Mecanismo do original ("toxinas", uso tópico como solução) | Mecanismo da VSL |
+| Mostrar ou citar o SlimSoda / o pote | O ad vende o vídeo |
+| Benefício poético | Benefício cru e visualizável + sentimental |
+| Leva sem tempo médio definido | Perguntar antes de escolher as referências |
 
 ## Evolução
 
-Esta skill melhora com o **feedback do Copy App** e com métricas. Critério: correção que apareceu em 2 anúncios ou que o Erick escreveu em tom de regra ("sempre", "nunca") → propor a regra, e com o ok dele adicionar em `references/regras-e-qa.md` (seção Regras aprendidas, com data e origem). Commitar no repo `erickalexandro/meus_skills` e copiar pra `~/.claude/skills/`.
+Feedback do Copy App e métricas viram regra: correção que apareceu em 2 anúncios, ou que o Erick escreveu em tom de regra → propor e, com o ok, registrar em `references/regras-e-qa.md` (Regras aprendidas). Regra de produção nova do editor → `references/regra-do-editor.md`. Commitar no repo `erickalexandro/meus_skills` e copiar pra `~/.claude/skills/`.

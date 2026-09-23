@@ -35,10 +35,10 @@ Várias peças de uma vez: uma ficha por criativo e, no fim, uma **tabela compar
 
 Frontmatter: `tipo: analise-criativo-org · id · fonte (nota do swipe ou link) · plataforma · duracao_s · metricas · formato · persona · angulo · consciencia · estrutura_invisivel (uma linha) · modelar: sim|talvez|não · analisado_em`
 
-1. **Ficha rápida**: formato, duração, persona, cenário, público, nicho, ângulo, métrica e por que ela importa (views = alcance/gancho; comentários = CTA/polêmica)
+1. **Ficha rápida**: formato, duração, **caracteres da fala (EN, com espaços)**, persona, cenário, público, nicho, ângulo, métrica e por que ela importa (views = alcance/gancho; comentários = CTA/polêmica)
 2. **Primeiro frame e gancho**: gancho verbal, visual, auditivo e texto na tela; tipo; frase de aterrissagem; nota de 1 a 5 com o porquê
 3. **Transcrição e tradução** (EN + PT, frase a frase)
-4. **Linha do tempo**: tabela `tempo · fala · tela · função/elemento`
+4. **Linha do tempo = mapa de cenas**: tabela `cena · tempo · fala · o que aparece na tela · função/elemento`, no máximo 12 cenas (é a base que o editor usa no Motion Flow; a copy modelada precisa casar com cada cena)
 5. **Estrutura invisível**: a sequência em uma linha, no formato das 14 estruturas (ex.: `Gancho: curiosidade + promessa → mecanismo → CTA`) e, bloco a bloco, o elemento e **por que está naquela posição**
 6. **Checklist dos 11 elementos**: presente / ausente / fraco, com a frase que prova
 7. **Ângulo, big idea e mecanismo**: ângulo (categoria da Biblioteca de ângulos), big idea em uma frase, nome chiclete, mecanismo do problema, mecanismo da solução, pergunta que o vídeo faz a pessoa se fazer
@@ -54,6 +54,7 @@ Frontmatter: `tipo: analise-criativo-org · id · fonte (nota do swipe ou link) 
 
 ```
 PACOTE DE MODELAGEM — <id>
+Tamanho: fala da referência = <N> caracteres · <duração> · consciência <n> → alvo da copy <N a N+X%>
 Tipo de modelagem recomendado: preguiçosa | estudiosa | crazy | nicho primo — e por quê
 Manter intacto: <gancho verbal/visual, frase de aterrissagem, ritmo, formato — o "coração">
 Trocar obrigatoriamente: <mecanismo, produto/receita, persona, CTA, o que não cabe na oferta>
