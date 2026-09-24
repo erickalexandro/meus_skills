@@ -19,6 +19,11 @@ A copy vira vídeo no Motion Flow **em cima do vídeo de referência**. Por isso
 
 Quando o Erick manda "escolhe do swipe", a escolha de referência é sua: filtrar pelo avatar (arquétipo, cenário do kit), pela faixa de tempo, por nicho próximo de emagrecimento e pela métrica, e variar o ângulo entre os anúncios da leva.
 
+## Qual estratégia: avatar único ou MIX
+
+- **Página de avatar único** (ex.: AV_001, AV_002): testa **copy, ângulo e hook**. Fluxo abaixo, variando argumento e prova (R05).
+- **Página MIX**: testa **avatar e formato**, com copies repetidas. Leia `references/estrategia-mix.md` antes de tudo: 3 anúncios mais escalados do swipe → 3 copies base → 4 variações cada (2 de avatar e ambiente, 2 de formato e avatar).
+
 ## Antes de escrever (sempre): o ciclo de feedback
 
 O Erick ensina esta skill de três jeitos. Os três são lidos **antes** de escrever qualquer leva:

@@ -53,4 +53,12 @@ Formato: `R0N · [escopo] · regra · origem`. Prevalecem sobre as regras fixas.
   ✅ <fascination 3>
   ```
   3 fascinations fortes e curiosas, que deem vontade de comentar pra descobrir o que está escondido; cada uma de uma fórmula diferente (skill `gerador-de-bullets`), com parênteses de reforço quando couber, e testando ângulos novos a cada leva. Pode usar prova da VSL (Oprah, a doutora). Sem CTA repetido no fim. · origem: feedback no Copy App (ADS_002 do AV_001) + edição do Erick no mesmo anúncio, 23/09/2026.
+- **R06 · fascinations (primary text e dentro da copy)** · Soam como bullets de carta de vendas de verdade, não como resumo de benefício. Antes de escrever, ler bullets reais da coleção **Legendary Bullets Vault** do vault (`Swipe/Cartas antigas/Coleções/`, DOCX no Drive; Mel Martin e Bencivenga primeiro). O que faz um bullet forte:
+  - nomear a **frustração pequena e exata** que ela vive ("If your jeans button fine at breakfast and dig into your waist by 3 p.m.…"), não o benefício genérico;
+  - um **detalhe estranho e concreto** que obriga a descobrir o resto (Mel Martin: "Asparagus spears should be cut underwater. (Why?)");
+  - acusar o **erro que ela comete sem saber** ("Have you been… wrong (and can it really matter?)");
+  - **parêntese que vira o jogo** ou dá o golpe final (Bencivenga: "(Beware – a trap!)");
+  - contradizer "os especialistas" / "normal depois dos 40";
+  - nunca entregar a resposta, nunca inventar número ou estudo.
+  Dentro da copy, o mesmo recurso aparece como resultado concreto por dia ("by day three… by day seven…") e como isca no CTA ("the one step most people skip"). · origem: feedback no Copy App ("fascinations muito ruins, fracos, sem curiosidade nem conexão… busque referências de bullets em cartas de vendas"), 23/09/2026.
 - **R05 · leva** · Variar ângulo, **prova e argumento** entre os anúncios da leva; não repetir o mesmo argumento (ex.: "a versão online dura poucas horas + ingrediente secreto") em vários anúncios. Consultar `banco-de-argumentos.md` (Biblioteca de cartas + "Já usados") e atualizar a tabela ao fim da leva. · origem: feedback no Copy App, 23/09/2026.

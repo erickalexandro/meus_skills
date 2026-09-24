@@ -49,4 +49,8 @@ Por que · O que NUNCA · Certo? ERRADO! · Gimmick (nome próprio: "o guarda-co
 | AV_002 leva 01 | ADS_004 | 3 erros da manhã; "a médica disse que é normal" | Causa única (intestino) |
 | AV_002 leva 01 | ADS_005 | 3 itens da cozinha; gengibre "o guarda-costas"; diet é química | Marido reparou; blusa pra dentro na igreja |
 
+| MIX leva 01 | Copy A (CV-07, 4 variações) | Uma noite + ritual da manhã, sem dieta nem academia; resultado por dia (dia 3 inchaço, dia 7 beliscar) | Tradição da casa + assinatura do avatar |
+| MIX leva 01 | Copy B (CV-46, 4 variações) | "Você não come demais, o intestino dormiu"; tirar a culpa | Mecanismo (ácido → células) + segredo que "vão tirar do ar" |
+| MIX leva 01 | Copy C (CV-13, 4 variações) | "Pode não ser gordura, pode ser o intestino"; o "reset da manhã" de 3 dias | Encenação de diagnóstico + caderno de remédios |
+
 Ainda não usados: descoberta por acidente, humilhação social (reunião/festa), ocasião especial com data, "even if you cheat", paradoxo, analogia de cozinha como mecanismo, regra de 5 palavras.
