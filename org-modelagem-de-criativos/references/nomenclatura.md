@@ -29,9 +29,13 @@ Sem rede (só Facebook) e sem avatar (a MIX não tem avatar fixo, e o avatar fic
 | `PG04` | MIX | vários (`mix_avatar_ids`) | `MIX` |
 | `PG05` | Sarah Miller | AV_002 Sarah Miller | `AV_002` |
 
-Página nova = próximo número (`PG06`…). Antes de uma leva, conferir esta tabela contra `account_pages` no Supabase (`czvscrixfrksgeucecdc`); se divergir, vale o app e esta tabela é corrigida no mesmo commit.
+Página nova = próximo número (`PG06`…). Fonte de verdade: coluna `code` de `account_pages` no OPS-organic (Supabase `czvscrixfrksgeucecdc`), que é obrigatória e única; antes de uma leva, conferir esta tabela contra ela e, se divergir, vale o app e esta tabela é corrigida no mesmo commit. O próximo código livre de uma página sai pronto no MCP `ops_generate_nomenclature` (página → próximo ADS) ou no botão "Usar o próximo da página" do modal Novo vídeo.
 
-Pastas do Drive e nome das páginas no app seguem o mesmo número: `PG01_Harper Wilson`, `PG02_Sophia Brown`…
+No Copy App, cada grupo de `avatars` tem o campo `pg` (PG01…PG05) e a página abre por `#PG05`.
+
+Pastas das páginas no Drive (pasta `AVATARES`): `PG01_Hasper Wilson`, `PG02_Sophia Brown`, `PG03_Emma Davys`, `PG04_MIX 1`, `PG05_Sarah Miller`.
+
+No OPS-organic, um vídeo com código `SS-PGnn-…` é ligado sozinho à página do código (e ao avatar, se a página é de avatar único); na MIX, mandar o avatar que fala no campo `avatar` do card.
 
 ## Leva
 

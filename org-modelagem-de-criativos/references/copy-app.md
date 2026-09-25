@@ -7,7 +7,7 @@
 
 | Coleção | Doc id | Campos |
 |---|---|---|
-| `avatars` | `AV_001`, `AV_002`, `EMMA_DAVYS`, `SOPHIA_BROWN`, `MIX` | code, pagina, nome, arquetipo, status (`in_use`/`sem_avatar`/`mix`), order |
+| `avatars` | `AV_001`, `AV_002`, `EMMA_DAVYS`, `SOPHIA_BROWN`, `MIX` (um por **página**) | **pg** (`PG01`…, desde 25/09/2026; a home ordena e mostra por ele), code, pagina, nome, arquetipo, status (`in_use`/`sem_avatar`/`mix`), order. Página nova no OPS-organic → criar o grupo aqui com o mesmo `pg` |
 | `levas` | `<PGnn>__leva-<NN>` (ex.: `PG01__leva-02`; as antigas ficaram `AV_001__leva-01`) | avatarId (= grupo da página, abaixo), label, exemplo (bool), escritoPor, data (AAAA-MM-DD), order |
 | `ads` | a **nomenclatura** inteira (`SS-PG01-ADS_007-V_001`; as antigas ficaram `SS-FB-AV_001-…`) | avatarId, levaId, order, avatarUsado, videoModeladoUrl, finalVideoUrl, hookEN/PT, bodyEN/PT, ctaFinalEN/PT, primaryTextEN/PT, **briefing** (texto PT, painel largo embaixo da copy), **refChars** (número; a página mostra "Fala EN: X · referência: Y (+Z%)" e fica vermelha acima de +20%) |
 
@@ -27,16 +27,16 @@ Campos antigos que seguem fora da UI (não recriar sem o Erick pedir): briefingU
 2. Montar os docs num JSON por anúncio no diretório tmp do job (evita retypar texto longo).
 3. **Um único `batch`** (até 50 writes): `set` do doc da leva nova + `set` de cada anúncio. Pra alterar um anúncio que já existe, usar `update` com `if_version` da última leitura (o Erick pode ter editado na página).
 4. Conferir com `list` em `ads` (where `levaId == <leva>`).
-5. Link direto de um anúncio: `https://claude.ai/artifact/N2ERvn83tfyTBvr7eTwYWi#<avatarId>.<levaId>.<nomenclatura>`.
+5. Link direto de um anúncio: `https://claude.ai/artifact/N2ERvn83tfyTBvr7eTwYWi#<PGnn>.<levaId>.<nomenclatura>` (o id do grupo, `#AV_002…`, também funciona). A página marca "código antigo" nos anúncios `SS-<REDE>-AV_…`.
 
 Leva de **exemplo** (`exemplo: true`, `AV_001__leva-exemplo-01`): quando a primeira leva real do AV_001 subir, perguntar se pode apagar.
 
 ## Subir no pipeline do OPS-organic (depois do Copy App)
 
 Cada anúncio vira um card no estágio **Roteiro** do OPS-organic (Supabase `czvscrixfrksgeucecdc`, tabela `videos`), igual ao que o modal "Novo vídeo" cria. Se o MCP `ops-organic` estiver conectado, usar `ops_create_video`; senão, `execute_sql` com:
-- `nomenclature` (a mesma do Copy App: é a chave entre os dois sistemas). O app ainda só reconhece o formato antigo (`src/lib/nomenclature.ts` do OPS-organic); o código novo `SS-PGnn-…` é aceito como texto livre, então **preencher à mão**: `avatar` (`AV_00X` de quem fala), `avatar_id` (uuid de `avatars`), `avatar_name`, `network = 'FB'`, `ads_number` e `version` (números do ADS e do V);
+- `nomenclature` (a mesma do Copy App: é a chave entre os dois sistemas). O OPS-organic lê o código `SS-PGnn-…`: o gatilho `fill_video_from_page_code` do banco preenche sozinho `network = 'FB'`, `ads_number`, `version`, a página (`metrics.targetPageId/Name`) e, em página de avatar único, `avatar`/`avatar_id`/`avatar_name`. **Na MIX (PG04)** mandar `avatar`, `avatar_id` e `avatar_name` de quem fala. (Enquanto a migration `page_codes_nomenclature` não estiver aplicada, preencher esses campos à mão.);
 - `stage = 'roteiro'`, `copy_status = 'escrevendo'` (o Erick muda pra `pre_aprovado`/`pronto` ao revisar);
-- `briefing_url` = link direto do anúncio no Copy App (`ARTIFACT_URL#<avatarId>.<levaId>.<nomenclatura>`);
+- `briefing_url` = link direto do anúncio no Copy App (`ARTIFACT_URL#<PGnn>.<levaId>.<nomenclatura>`);
 - `hook_summary` = hookEN; `body_summary` = "Ref. <id> · <ângulo> · ~<s> s · CTA";
 - `created_by` = uuid do perfil do Erick em `profiles`; `metrics` = `{targetPageId, targetPageName}` da página do código `PGnn` em `account_pages`.
 Inserir com `where not exists` pela nomenclatura (o app não permite código repetido).
