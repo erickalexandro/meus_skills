@@ -21,7 +21,11 @@ Contar com PowerShell: `("<texto>").Length`, ou somar `hookEN + " " + bodyEN + "
 
 - Modelada, não copiada. Mas mantém uma ligação leve com o que o vídeo mostra: **mesma sequência geral de ideias, mesmo tipo de cena** (se a referência prepara uma receita, a copy fala de preparar a receita; se é talking head, a copy é fala direta).
 - **Cada trecho da copy faz sentido com o que está acontecendo naquele trecho da referência.** Assim as cenas saem certas de primeira. O briefing traz o mapa cena a cena.
-- Não pedir o que a referência não consegue mostrar: outro ambiente, outra pessoa, o pote do produto.
+- Não pedir o que a referência não consegue mostrar: outro ambiente, outra pessoa, o pote do produto. Mudança de cenário ou figurino só entra escrita na DIREÇÃO VISUAL.
+
+## Regra 3 — o avatar tem que caber na cena da referência
+
+A roupa e a aparência vêm da **foto MASTER** do avatar; o cenário vem da **referência**. Avatar, copy e referência de mundos diferentes travam a geração. Antes de escrever: triagem 🟢🟡🔴 e, em 🟡/🔴, DIREÇÃO VISUAL no briefing. Regra completa: `encaixe-avatar-referencia.md`.
 
 ## Limites fixos da produção (nunca passar, mesmo com a Regra 1)
 
@@ -40,3 +44,4 @@ Frase de aterrissagem depois do hook (quando a referência tem esse bloco) · be
 - [ ] A copy conversa com o que a referência mostra, trecho por trecho (mapa de cenas no briefing)
 - [ ] Nenhuma frase passa de 24 palavras; no máximo 12 cenas; até 1 min 36 s
 - [ ] Números por extenso, sem travessão, sem símbolos, sem colchetes
+- [ ] Encaixe 🟢🟡🔴 no briefing; em 🟡/🔴, DIREÇÃO VISUAL preenchida (no máximo 1 virada)

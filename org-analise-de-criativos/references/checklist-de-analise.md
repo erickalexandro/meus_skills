@@ -32,6 +32,8 @@ Curiosidade · Promessa · Segmentação · Problema · Spoiler do mecanismo · 
 
 Quem fala (idade, arquétipo, credencial), cenário e sinais de credibilidade (bandeira dos EUA, estante, jaleco, cozinha real), B-roll e demonstração, legenda (posição, cor de destaque, caixa-alta), ritmo (segundos por corte), trilha, provas visuais (antes/depois, textura, paciente). Persona gerada por IA? Mesma persona em vários vídeos do swipe (sinal de série validada)?
 
+**Mundo da referência e encaixe** (o Motion Flow copia cenário e ações da referência, mas a roupa vem da foto MASTER do avatar): anotar cultura/etnia e idade de quem fala, roupa, cenário, se há 2ª pessoa (paciente, filha), o que está na mão. Depois, pra cada página ativa: 🟢 mesmo tipo de pessoa e cenário · 🟡 cabe com 1 ajuste (tirar a 2ª pessoa, trocar o objeto) · 🔴 mundos diferentes (outra cultura, outra idade, cenário que a copy vai contradizer). Em 🔴, sugerir uma `SW_` compatível do mesmo formato (consultar `swipe_creatives.avatar` no Supabase) e, se valer manter o molde campeão, **uma** virada visual sem caricatura. Regra completa: `org-modelagem-de-criativos/references/encaixe-avatar-referencia.md`.
+
 ## Orgânico (o que o ad pago não tem)
 
 - CTA por palavra-chave: uma palavra só, curta, fácil de digitar? Tem relação com a promessa?

@@ -1,6 +1,6 @@
 ---
 name: org-modelagem-de-criativos
-description: "Use quando o Erick pedir para modelar, escrever, adaptar ou criar copy/roteiro de criativos orgânicos (ORG / OND-organic, SlimSoda) a partir de uma análise, de um criativo do swipe ou de um vídeo de referência — 'modela esse', 'modela 5 do swipe pro avatar 1', 'escreve a leva do AV_001', 'faz variações desse criativo', 'sobe no Copy App' — ou quando a skill org-analise-de-criativos entregar um Pacote de modelagem. Não serve para analisar o criativo (org-analise-de-criativos) nem para advertorial."
+description: "Use quando o Erick pedir para modelar, escrever, adaptar ou criar copy/roteiro de criativos orgânicos (ORG / OND-organic, SlimSoda) a partir de uma análise, de um criativo do swipe ou de um vídeo de referência — 'modela esse', 'modela 5 do swipe pro avatar 1', 'escreve a leva da PG01', 'faz variações desse criativo', 'sobe no Copy App' — ou quando a skill org-analise-de-criativos entregar um Pacote de modelagem. Não serve para analisar o criativo (org-analise-de-criativos) nem para advertorial."
 ---
 
 # ORG · Modelagem de criativos orgânicos
@@ -8,20 +8,22 @@ description: "Use quando o Erick pedir para modelar, escrever, adaptar ou criar 
 Segunda metade da esteira: **Pacote de modelagem → copy EN + PT + briefing → Copy App → editor (Motion Flow)**.
 Modelar é **manter o esqueleto validado e trocar o recheio**. Fica o que fez o original performar: gancho, ordem dos elementos, ritmo, tipo de cena e **tamanho**. O que é do produto dele (mecanismo, receita, promessa, CTA) vira SlimSoda.
 
-A copy vira vídeo no Motion Flow **em cima do vídeo de referência**. Por isso tamanho e contexto de cena são regra dura: `references/regra-do-editor.md`.
+A copy vira vídeo no Motion Flow **em cima do vídeo de referência**, com a roupa da foto MASTER do avatar e o cenário da referência. Por isso tamanho, contexto de cena e **encaixe avatar × referência** são regra dura: `references/regra-do-editor.md` e `references/encaixe-avatar-referencia.md`.
 
 ## Entrada obrigatória (sem isso, parar e pedir)
 
 1. **Pacote de modelagem** (seção 14 da ficha `AN-<id>`). Sem ele, rodar antes a `org-analise-de-criativos`; numa leva, uma ficha por referência.
-2. **Briefing mínimo**: **avatar + vídeo de referência + ângulo + formato** (memória `operacao-propria-ond-nando.md`).
+2. **Briefing mínimo**: **página + avatar + vídeo de referência + ângulo + formato** (memória `operacao-propria-ond-nando.md`).
 3. **Tempo médio de vídeo desejado para a leva.** Se o Erick não disse, **perguntar** junto com o resto que faltar, numa mensagem só (hoje o padrão é curto, 30–70 s; vai crescer). O tempo decide quais referências servem: a copy tem o tamanho da referência, e o teto é 1 min 36 s.
-4. **Nomenclatura**: `SS-<REDE>-AV_XXX-ADS_YYY-V_ZZZ` (`HIB` padrão, `FB`, `IG`). ADS continua a sequência do avatar (conferir `ads` no Copy App); V sobe quando o mesmo anúncio ganha variação.
+4. **Nomenclatura por página**: `SS-PGnn-ADS_YYY-V_ZZZ` (ex.: `SS-PG05-ADS_006-V_001`). Sem rede e sem avatar. ADS continua a sequência **da página** (códigos antigos incluídos); V sobe quando a mesma copy, na mesma referência, ganha outro avatar, figurino ou edição. Tabela de páginas e próximos números: `references/nomenclatura.md`.
 
-Quando o Erick manda "escolhe do swipe", a escolha de referência é sua: filtrar pelo avatar (arquétipo, cenário do kit), pela faixa de tempo, por nicho próximo de emagrecimento e pela métrica, e variar o ângulo entre os anúncios da leva.
+Quando o Erick manda "escolhe do swipe", a escolha de referência é sua: **primeiro pelo encaixe com o avatar** (pessoa e cenário compatíveis, `references/encaixe-avatar-referencia.md`), depois pela faixa de tempo, por nicho próximo de emagrecimento e pela métrica, variando o ângulo entre os anúncios da leva. Molde campeão de outro mundo só entra como decisão, com virada escrita.
+
+Mesmo quando o Erick escolhe a referência, fazer a **triagem 🟢🟡🔴** de cada par avatar × referência antes de escrever. Deu 🔴: avisar na hora com as duas saídas (trocar por uma `SW_` compatível do mesmo formato, ou manter com uma virada) e seguir com a que ele escolher; se ele não estiver na conversa, seguir com a troca e marcar como decisão a confirmar.
 
 ## Qual estratégia: avatar único ou MIX
 
-- **Página de avatar único** (ex.: AV_001, AV_002): testa **copy, ângulo e hook**. Fluxo abaixo, variando argumento e prova (R05).
+- **Página de avatar único** (ex.: PG01 Harper, PG05 Sarah): testa **copy, ângulo e hook**. Fluxo abaixo, variando argumento e prova (R05).
 - **Página MIX**: testa **avatar e formato**, com copies repetidas. Leia `references/estrategia-mix.md` antes de tudo: 3 anúncios mais escalados do swipe → 3 copies base → 4 variações cada (2 de avatar e ambiente, 2 de formato e avatar).
 
 ## Antes de escrever (sempre): o ciclo de feedback
@@ -43,6 +45,7 @@ Depois:
 
 | # | Passo | Saída |
 |---|---|---|
+| 0 | **Triagem de encaixe** avatar × copy × referência (🟢🟡🔴) e, em 🟡/🔴, a DIREÇÃO VISUAL (cenário, figurino, ajuste, no máximo 1 virada). A cena que a copy descreve tem que existir na referência ou na direção | encaixe + direção |
 | 1 | Contar os caracteres da fala da referência e definir o alvo: consciente = 0 a +5%; média = até +12%; pouco consciente = até +20% | `refChars` + faixa-alvo |
 | 2 | **Numerar os blocos da referência** (cada frase/ideia com função própria) e mapear o que aparece em cada um | lista de blocos |
 | 3 | Escrever o **EN bloco a bloco**: mesmo nº de blocos, mesma ordem, mesma função; cada frase casa com a cena daquele bloco; máx. 24 palavras por cena (bloco longo vira 2 cenas) | hook, body, CTA final |
@@ -50,9 +53,9 @@ Depois:
 | 5 | Contar de novo. Passou do alvo: cortar. Faltou: completar com causa/qualificação, nunca com enfeite | contagem final |
 | 6 | **PT**: tradução fiel pra revisão (não é outra copy) | hookPT, bodyPT, ctaFinalPT |
 | 7 | **Primary text** no molde da R04: hook de 1 linha → "Comment RECIPE below and follow me to see:" → 3 fascinations ✅ (skill `gerador-de-bullets`, fórmulas diferentes, inspiração na Biblioteca de cartas) | primaryTextEN/PT |
-| 8 | **Briefing** completo (modelo abaixo) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
-| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
-| 10 | Subir no Copy App (`references/copy-app.md`), salvar o **snapshot** da leva no vault, **criar os cards em Roteiro no pipeline do OPS-organic** (mesma referência) e entregar: tabela nomenclatura · referência · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
+| 8 | **Briefing** completo (modelo abaixo, com ENCAIXE e DIREÇÃO VISUAL) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
+| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA, encaixe + direção, código `SS-PGnn` e referência `SW_`) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
+| 10 | Subir no Copy App (`references/copy-app.md`), salvar o **snapshot** da leva no vault, **criar os cards em Roteiro no pipeline do OPS-organic** (mesma referência) e entregar: tabela nomenclatura · referência (`SW_`) · encaixe (🟢🟡🔴 + virada) · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
 
 ## Persuasão dentro do espelho de blocos
 
@@ -82,8 +85,9 @@ Se não couber, cortar palavras dentro do bloco, nunca apagar um bloco nem estou
 ## Modelo do briefing (campo `briefing`)
 
 ```
-AVATAR: <nome, código, idade, arquétipo> · cenário: <do kit>
-REFERÊNCIA: <id do swipe> · <link> · <duração> · <métricas>
+PÁGINA: <PGnn · nome da página>
+AVATAR: <nome, código, idade, arquétipo> · figurino da MASTER: <roupa> · cenário: <do kit>
+REFERÊNCIA: <SW_nnn do app> · <link> · <duração> · <métricas> · quem aparece e onde: <pessoa(s), cenário>
 ÂNGULO: <ângulo + big idea em uma frase>
 FORMATO: <tipo de vídeo> · público/consciência: <nível 1–5 e por quê>
 TAMANHO: referência <N> caracteres · copy <M> (+X%) · justificativa se passou
@@ -95,6 +99,13 @@ MAPA DE CENAS (máx. 12):
   C2 ...
 CTA: RECIPE + follow · CTA 1 na cena <n> · CTA final na cena <n>
 CONGRUÊNCIA COM A VSL: <termos plantados>
+COERÊNCIA DE CENA (R08): <o que aparece na tela porque a fala cita · o que da referência não pode aparecer>
+ENCAIXE AVATAR × REFERÊNCIA: <🟢 | 🟡 | 🔴> — <por quê, em uma linha>
+DIREÇÃO VISUAL (obrigatório em 🟡/🔴):
+  - Cenário: <manter o da referência | outro, qual>
+  - Figurino: <roupa da MASTER | variante>
+  - Ajuste de cena: <...>
+  - Virada: <1 só, ou "nenhuma">
 ALERTAS PRO EDITOR: <o que não mostrar: pote, outra pessoa, ambiente novo; cuidados>
 ```
 
@@ -114,7 +125,12 @@ ALERTAS PRO EDITOR: <o que não mostrar: pote, outra pessoa, ambiente novo; cuid
 | Mostrar ou citar o SlimSoda / o pote | O ad vende o vídeo |
 | Benefício poético | Benefício cru e visualizável + sentimental |
 | Leva sem tempo médio definido | Perguntar antes de escolher as referências |
+| Referência de outro mundo sem direção (vovó japonesa pra avatar americana, copy "na cozinha" em cima de jardim) | Triagem 🟢🟡🔴: trocar por `SW_` compatível ou escrever a DIREÇÃO VISUAL com 1 virada |
+| Pedir troca de roupa pra "combinar" sem escrever | A roupa vem da MASTER; variante só no campo Figurino da DIREÇÃO VISUAL |
+| Duas viradas no mesmo vídeo, ou virada caricata | No máximo 1, visual, e o avatar tem que parecer que pertence ao lugar |
+| Citar a referência como `CV-`/`SW-` | Sempre `SW_nnn` do app + link |
+| Nomenclatura com rede ou avatar (`SS-FB-AV_002-…`) | `SS-PGnn-ADS_YYY-V_ZZZ` (`references/nomenclatura.md`) |
 
 ## Evolução
 
-Feedback do Copy App e métricas viram regra: correção que apareceu em 2 anúncios, ou que o Erick escreveu em tom de regra → propor e, com o ok, registrar em `references/regras-e-qa.md` (Regras aprendidas). Regra de produção nova do editor → `references/regra-do-editor.md`. Commitar no repo `erickalexandro/meus_skills` e copiar pra `~/.claude/skills/`.
+Feedback do Copy App e métricas viram regra: correção que apareceu em 2 anúncios, ou que o Erick escreveu em tom de regra → propor e, com o ok, registrar em `references/regras-e-qa.md` (Regras aprendidas). Regra de produção nova do editor → `references/regra-do-editor.md`; do encaixe visual → `references/encaixe-avatar-referencia.md`. Commitar no repo `erickalexandro/meus_skills` e copiar pra `~/.claude/skills/`.
