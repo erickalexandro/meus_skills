@@ -53,4 +53,10 @@ Por que · O que NUNCA · Certo? ERRADO! · Gimmick (nome próprio: "o guarda-co
 | MIX leva 01 | Copy B (CV-46, 4 variações) | "Você não come demais, o intestino dormiu"; tirar a culpa | Mecanismo (ácido → células) + segredo que "vão tirar do ar" |
 | MIX leva 01 | Copy C (CV-13, 4 variações) | "Pode não ser gordura, pode ser o intestino"; o "reset da manhã" de 3 dias | Encenação de diagnóstico + caderno de remédios |
 
-Ainda não usados: descoberta por acidente, humilhação social (reunião/festa), ocasião especial com data, "even if you cheat", paradoxo, analogia de cozinha como mecanismo, regra de 5 palavras.
+| PG05 leva 02 (substitui a AV_002 leva 01, apagada) | ADS_006 (SW_055) | Paradoxo: "eu comia menos e a barriga crescia"; o corpo acha que passa fome | Manequim de barriga petrificada + a calça jeans |
+| PG05 leva 02 | ADS_007 (SW_049) | Analogia de cozinha: bicarbonato solta o ácido como solta gordura da panela; 10 dias | Demonstração (tigela + modelo anatômico) |
+| PG05 leva 02 | ADS_008 (SW_056) | Clínicas de emagrecimento não querem (saída da agulha); acorda as células da saciedade | Efervescência na bancada |
+| PG05 leva 02 | ADS_009 (SW_076) | Abdominal e fome não tiram a barriga de baixo depois dos 40: "não é seu caráter" | Voz de quem viveu + caixa na mão |
+| PG05 leva 02 | ADS_010 (SW_052) | Purity problem: gengibre de mercado quase sem gingerol; gingerol freia a enzima da saciedade | Teste da língua na irmã + a mãe |
+
+Ainda não usados: descoberta por acidente, humilhação social (reunião/festa), ocasião especial com data, "even if you cheat", regra de 5 palavras.

@@ -46,7 +46,7 @@ No OPS-organic, um vídeo com código `SS-PGnn-…` é ligado sozinho à página
 | Página | Já usados (código antigo) | Próximo |
 |---|---|---|
 | PG01 Harper | `SS-FB-AV_001-ADS_002` a `006` | `ADS_007` |
-| PG05 Sarah | `SS-FB-AV_002-ADS_001` a `005` | `ADS_006` |
+| PG05 Sarah | `SS-FB-AV_002-ADS_001` a `005` (apagados em 25/09, substituídos) · `SS-PG05-ADS_006` a `010` (leva 02) | `ADS_011` |
 | PG04 MIX | `SS-FB-AV_003…008-ADS_001/002` (por avatar) | `ADS_003` |
 | PG02, PG03 | nenhum | `ADS_001` |
 
