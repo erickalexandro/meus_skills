@@ -30,7 +30,7 @@ Fontes: **Biblioteca de cartas** do vault (`Swipe/Cartas antigas/Nichos/Emagreci
 - **Prova demonstrativa:** o preparo na cena, a comparação na mão (caixa errada × certa).
 - **Nunca** fabricar estudo, número ou depoimento que não esteja na VSL ou no briefing.
 
-## Fascinations (primary text): fórmulas a alternar
+## Fascinations (só dentro da fala do vídeo; R12 tirou da descrição): fórmulas a alternar
 
 Por que · O que NUNCA · Certo? ERRADO! · Gimmick (nome próprio: "o guarda-costas") · Quando · Número · Se… então · A verdade sobre · Melhor que · O único · Sneaky (só com elemento real de algo escondido) · prova de celebridade/autoridade da VSL. Não repetir a mesma fórmula nos 3 bullets de um anúncio; variar entre os anúncios da leva.
 

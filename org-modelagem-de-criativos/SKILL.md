@@ -1,11 +1,11 @@
 ---
 name: org-modelagem-de-criativos
-description: "Use quando o Erick pedir para modelar, escrever, adaptar ou criar copy/roteiro de criativos orgânicos (ORG / OND-organic, SlimSoda) a partir de uma análise, de um criativo do swipe ou de um vídeo de referência — 'modela esse', 'modela 5 do swipe pro avatar 1', 'escreve a leva da PG01', 'faz variações desse criativo', 'sobe no Copy App' — ou quando a skill org-analise-de-criativos entregar um Pacote de modelagem. Não serve para analisar o criativo (org-analise-de-criativos) nem para advertorial."
+description: "Use quando o Erick pedir para modelar, escrever, adaptar ou criar copy/roteiro de criativos orgânicos (ORG / OND-organic, SlimSoda) a partir de uma análise, de um criativo do swipe ou de um vídeo de referência — 'modela esse', 'modela 5 do swipe pro avatar 1', 'escreve a leva da PG01', 'faz variações desse criativo', 'sobe na Produção' (ou 'sobe no Copy App', nome antigo) — ou quando a skill org-analise-de-criativos entregar um Pacote de modelagem. Não serve para analisar o criativo (org-analise-de-criativos) nem para advertorial."
 ---
 
 # ORG · Modelagem de criativos orgânicos
 
-Segunda metade da esteira: **Pacote de modelagem → copy EN + PT + briefing → Copy App → editor (Motion Flow)**.
+Segunda metade da esteira: **Pacote de modelagem → copy EN + PT + briefing + título/descrição de postagem → Produção do app OPS Organic → editor (Motion Flow)**. Desde 28/09/2026 a copy mora no app (`references/copy-app.md`); o artifact OPS COPYWRITING virou arquivo morto, **não subir nem editar copy nele**.
 Modelar é **manter o esqueleto validado e trocar o recheio**. Fica o que fez o original performar: gancho, ordem dos elementos, ritmo, tipo de cena e **tamanho**. O que é do produto dele (mecanismo, receita, promessa, CTA) vira SlimSoda.
 
 A copy vira vídeo no Motion Flow **em cima do vídeo de referência**, com a roupa da foto MASTER do avatar e o cenário da referência. Por isso tamanho, contexto de cena e **encaixe avatar × referência** são regra dura: `references/regra-do-editor.md` e `references/encaixe-avatar-referencia.md`.
@@ -29,8 +29,8 @@ Mesmo quando o Erick escolhe a referência, fazer a **triagem 🟢🟡🔴** de 
 ## Antes de escrever (sempre): o ciclo de feedback
 
 O Erick ensina esta skill de três jeitos. Os três são lidos **antes** de escrever qualquer leva:
-1. **Feedback escrito no Copy App** (campo "Feedback desta copy" em cada anúncio + aba `#feedback`): `ArtifactData query` em `feedback` com `status == "novo"`.
-2. **Edições que ele fez direto na copy**: `ArtifactData query` em `ads` com `out_dir` numa pasta do worktree, depois `node scripts/diff-edicoes.js <snapshot> <pasta>/ads` (versão acima da que você subiu = mexido por ele). Depois de processar, regravar o snapshot com `node scripts/make-snapshots.js <pasta>/ads <pasta de snapshots do vault>`. Detalhe: comparar com o snapshot da leva (`Claude Workspace/OND-organic/Copy App — snapshots/<levaId>.json` no vault) e entender o que mudou e por quê.
+1. **Feedback escrito na Produção do app** (campo "Feedback desta copy" de cada anúncio, guardado em `videos.copy.feedback[]` com `status: 'novo'`): consultar pelo Supabase do OPS-organic (projeto `czvscrixfrksgeucecdc`), p.ex. `select nomenclature, copy->'feedback' from videos where copy->'feedback' @> '[{"status":"novo"}]'`. Detalhe em `references/copy-app.md`.
+2. **Edições que ele fez direto na copy**: comparar o `videos.copy` atual com o que você subiu (snapshot da leva no vault, `Claude Workspace/OND-organic/Copy App — snapshots/`) e entender o que mudou e por quê. ⚠️ `scripts/diff-edicoes.js` e `make-snapshots.js` ainda leem o formato do artifact antigo (chaves `hookEN`…); até serem adaptados, comparar à mão.
 3. **Feedback no chat.**
 
 Para cada item: aplicar na leva atual; se é regra (repetiu em 2 anúncios, ou veio em tom de regra, ou corrige a estrutura), registrar em `references/regras-e-qa.md` › Regras aprendidas (`R0N · escopo · regra · origem`), commitar a skill e recopiar pra `~/.claude/skills/`. Marcar o feedback como `lido`. Na entrega, dizer quais regras novas entraram.
@@ -39,7 +39,7 @@ Depois:
 1. **Regras**: `references/regra-do-editor.md` e `references/regras-e-qa.md` inteiros (as Regras aprendidas prevalecem) + `Aprendizado de copy — SlimSoda.md` (Regras ativas) no vault.
 2. **Vocabulário da VSL**: briefing 2.0, seções 6.2 (nomes chiclete), 8.1 (Won't Tell), 8.6 (VOC), 11 (consciência) e 12 (o que o ad planta). Um nome por conceito.
 2b. **Argumentos e provas (R05)**: `references/banco-de-argumentos.md`. Escolha um argumento central e uma prova **diferentes** pra cada anúncio da leva, puxando da **Biblioteca de cartas** do vault (`Swipe/Cartas antigas/Nichos/Emagrecimento/`: headlines, bullets, analogias, provas sociais e de mídia) e da seção "Ainda não usados". Pra fascinations, carregue a skill `gerador-de-bullets`.
-3. **Avatar**: `avatars` no Copy App + `avatars` no Supabase do OPS-organic (projeto `czvscrixfrksgeucecdc`: `code, name, age, archetype`; as imagens do kit ficam em `kit->'_imageUrl'`, base64, então salvar em arquivo e abrir pra ver cenário e visual). A voz e a situação de vida do avatar mandam na escolha das palavras.
+3. **Avatar**: `avatars` no Supabase do OPS-organic (projeto `czvscrixfrksgeucecdc`: `code, name, age, archetype`; as imagens do kit ficam em `kit->'_imageUrl'`, base64, então salvar em arquivo e abrir pra ver cenário e visual). A voz e a situação de vida do avatar mandam na escolha das palavras.
 
 ## Fluxo por anúncio
 
@@ -52,10 +52,10 @@ Depois:
 | 4 | Encaixar a persuasão **dentro** dos blocos (abaixo); decidir o CTA pela duração estimada (≤ 50 s: só final; > 50 s: meio + final) | — |
 | 5 | Contar de novo. Passou do alvo: cortar. Faltou: completar com causa/qualificação, nunca com enfeite | contagem final |
 | 6 | **PT**: tradução fiel pra revisão (não é outra copy) | hookPT, bodyPT, ctaFinalPT |
-| 7 | **Primary text** no molde da R04: hook de 1 linha → "Comment RECIPE below and follow me to see:" → 3 fascinations ✅ (skill `gerador-de-bullets`, fórmulas diferentes, inspiração na Biblioteca de cartas) | primaryTextEN/PT |
+| 7 | **Título e descrição de postagem (R12)**, Facebook e YouTube separados: escrever em EN + PT o título do YouTube, o título do Facebook e a **linha de hook**; rodar `node scripts/post-fields.js entrada.json saida.json` (monta a CTA, alterna `hook_cta`/`cta`, põe 3 hashtags e valida). **Sem bullets nem fascinations na descrição.** Regras em `references/titulo-descricao-hashtags.md` | `fbTitleEn/Pt` · `fbDescEn/Pt` · `ytTitleEn/Pt` · `ytDescEn/Pt` · `fbDescMode` · `ytDescMode` |
 | 8 | **Briefing** completo (modelo abaixo, com ENCAIXE e DIREÇÃO VISUAL) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
-| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA, encaixe + direção, código `SS-PGnn` e referência `SW_`) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
-| 10 | Subir no Copy App (`references/copy-app.md`), salvar o **snapshot** da leva no vault, **criar os cards em Roteiro no pipeline do OPS-organic** (mesma referência) e entregar: tabela nomenclatura · referência (`SW_`) · encaixe (🟢🟡🔴 + virada) · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
+| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA, encaixe + direção, código `SS-PGnn` e referência `SW_`) + `node scripts/post-fields.js` (R12: títulos, descrição curta, 3 hashtags, nada proibido) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
+| 10 | Subir na **Produção do app** com `node <OPS-organic>/scripts/copy-ingest.mjs` (`references/copy-app.md`; a leva entra como rascunho, e o Erick manda pro Pipeline), salvar o **snapshot** da leva no vault e entregar: tabela nomenclatura · referência (`SW_`) · encaixe (🟢🟡🔴 + virada) · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
 
 ## Persuasão dentro do espelho de blocos
 
@@ -70,12 +70,17 @@ Se não couber, cortar palavras dentro do bloco, nunca apagar um bloco nem estou
 
 ## O que cada campo recebe
 
+> Nomes da tabela em formato do artifact antigo (`hookEN`). No app as mesmas chaves são `hookEn`, `bodyEn`, `ctaEn`, `hookPt`… (`videos.copy`); o mapeamento completo está em `references/copy-app.md`.
+
 | Campo | Conteúdo |
 |---|---|
 | `hookEN/PT` | Só o gancho falado |
 | `bodyEN/PT` | Da aterrissagem até antes do CTA final, com o CTA 1 dentro. **Só fala**: sem colchetes, sem direção de cena |
 | `ctaFinalEN/PT` | O fecho falado |
-| `primaryTextEN/PT` | Legenda do post no molde da R04 (hook · "Comment RECIPE below and follow me to see:" · 3 ✅) |
+| `fbTitleEn/Pt` · `fbDescEn/Pt` | Facebook: título (1ª linha da legenda) e descrição curta (`[hook]` + CTA da palavra-chave + 3 hashtags). Gerado por `post-fields.js` (R12) |
+| `ytTitleEn/Pt` · `ytDescEn/Pt` | YouTube Shorts: título (palavra-chave primeiro) e descrição curta (`[hook]` + CTA do link do perfil + 3 hashtags). R12 |
+| `fbDescMode` · `ytDescMode` | `hook_cta` ou `cta`, alternados entre os anúncios |
+| ~~`primaryTextEN/PT`~~ | **Aposentado pela R12** (era hook + 3 fascinations ✅). Não escrever mais |
 | `refChars` | Número: caracteres da fala da referência (a página calcula o %) |
 | `ctaKeyword` | Palavra-chave comentada (RECIPE), mostrada na caixa Edição |
 | `angulo` · `formato` · `publicoFatia` | Caixa "Informações da copy": `#N Nome (secundário: #N Nome)` · formato da Biblioteca + cena · quem, idade, situação vivida, o que já tentou |
@@ -133,4 +138,4 @@ ALERTAS PRO EDITOR: <o que não mostrar: pote, outra pessoa, ambiente novo; cuid
 
 ## Evolução
 
-Feedback do Copy App e métricas viram regra: correção que apareceu em 2 anúncios, ou que o Erick escreveu em tom de regra → propor e, com o ok, registrar em `references/regras-e-qa.md` (Regras aprendidas). Regra de produção nova do editor → `references/regra-do-editor.md`; do encaixe visual → `references/encaixe-avatar-referencia.md`. Commitar no repo `erickalexandro/meus_skills` e copiar pra `~/.claude/skills/`.
+Feedback da Produção do app e métricas viram regra: correção que apareceu em 2 anúncios, ou que o Erick escreveu em tom de regra → propor e, com o ok, registrar em `references/regras-e-qa.md` (Regras aprendidas). Regra de produção nova do editor → `references/regra-do-editor.md`; do encaixe visual → `references/encaixe-avatar-referencia.md`. Commitar no repo `erickalexandro/meus_skills` e copiar pra `~/.claude/skills/`.

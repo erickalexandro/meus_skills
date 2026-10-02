@@ -34,7 +34,7 @@ Fonte: memórias `regras-de-copy-ond.md` e `compliance-slimsoda-nao-e-regra-da-o
 - [ ] Mecanismo explicável numa frase e compatível com quem fala?
 - [ ] O que é do produto do original (receita, mecanismo, promessa) foi trocado?
 - [ ] `angulo` (#N), `formato`, `publicoFatia` e `ctaKeyword` preenchidos?
-- [ ] Primary text no molde da R04 (hook, "Comment RECIPE below and follow me to see:", 3 ✅ de fórmulas diferentes)?
+- [ ] Título + descrição de postagem do Facebook e do YouTube pela R12 (`node scripts/post-fields.js` sem erro; descrição curta, 3 hashtags, **sem bullet/✅/fascination**)?
 - [ ] Cada anúncio da leva com argumento e prova diferentes (R05), e a tabela "Já usados" atualizada?
 
 ## Regras aprendidas (feedback do Copy App, edições na página e métricas)
@@ -44,7 +44,7 @@ Formato: `R0N · [escopo] · regra · origem`. Prevalecem sobre as regras fixas.
 - **R01 · geral** · CTA no meio **só em copy acima de 50 s**; até 50 s, só o CTA final. · origem: Erick sobre o AD02 da leva 01 do AV_001 (CV-15, ~49 s), 23/09/2026.
 - **R02 · geral** · A modelagem **segue os mesmos blocos da referência**; não se acrescenta bloco (aterrissagem, fascination, mecanismo) que a referência não tem, encaixa-se dentro dos blocos existentes. · origem: Erick sobre o AD02, 23/09/2026 (a v1 tinha 9 blocos pra uma referência de 6).
 - **R03 · Copy App** · Todo anúncio sobe com ângulo numerado, formato, fatia de público e palavra-chave. · origem: pedido do Erick, 23/09/2026.
-- **R04 · primary text** · Curto, sempre neste molde (modelo escrito pelo Erick no ADS_002 do AV_001):
+- **R04 · primary text** · ~~Curto, sempre neste molde~~ **SUBSTITUÍDA pela R12 em 02/10/2026 (não usar mais).** Molde antigo (modelo escrito pelo Erick no ADS_002 do AV_001):
   ```
   <hook de 1 linha: curiosidade, conspiração, permissão ou qualificação do público>
 
@@ -55,7 +55,7 @@ Formato: `R0N · [escopo] · regra · origem`. Prevalecem sobre as regras fixas.
   ✅ <fascination 3>
   ```
   3 fascinations fortes e curiosas, que deem vontade de comentar pra descobrir o que está escondido; cada uma de uma fórmula diferente (skill `gerador-de-bullets`), com parênteses de reforço quando couber, e testando ângulos novos a cada leva. Pode usar prova da VSL (Oprah, a doutora). Sem CTA repetido no fim. · origem: feedback no Copy App (ADS_002 do AV_001) + edição do Erick no mesmo anúncio, 23/09/2026.
-- **R06 · fascinations (primary text e dentro da copy)** · Soam como bullets de carta de vendas de verdade, não como resumo de benefício. Antes de escrever, ler bullets reais da coleção **Legendary Bullets Vault** do vault (`Swipe/Cartas antigas/Coleções/`, DOCX no Drive; Mel Martin e Bencivenga primeiro). O que faz um bullet forte:
+- **R06 · fascinations (dentro da fala do vídeo; **não** mais na descrição, ver R12)** · Soam como bullets de carta de vendas de verdade, não como resumo de benefício. Antes de escrever, ler bullets reais da coleção **Legendary Bullets Vault** do vault (`Swipe/Cartas antigas/Coleções/`, DOCX no Drive; Mel Martin e Bencivenga primeiro). O que faz um bullet forte:
   - nomear a **frustração pequena e exata** que ela vive ("If your jeans button fine at breakfast and dig into your waist by 3 p.m.…"), não o benefício genérico;
   - um **detalhe estranho e concreto** que obriga a descobrir o resto (Mel Martin: "Asparagus spears should be cut underwater. (Why?)");
   - acusar o **erro que ela comete sem saber** ("Have you been… wrong (and can it really matter?)");
@@ -68,4 +68,5 @@ Formato: `R0N · [escopo] · regra · origem`. Prevalecem sobre as regras fixas.
 - **R09 · modelagem fiel** · A copy segue a estrutura e o formato do vídeo modelado, adaptando só pra oferta e pra vender a VSL. Se o vídeo é um comparativo no mercado, a copy é um comparativo no mercado. Benefícios e bullets crus e realistas, nada vago nem poético. · origem: feedback no Copy App (SS-FB-AV_004-ADS_001 e SS-FB-AV_006-ADS_001), 24/09/2026.
 - **R10 · encaixe avatar × referência** · A referência é escolhida pensando no avatar (pessoa e cenário compatíveis, mesmo formato e beats). Todo briefing traz `ENCAIXE AVATAR × REFERÊNCIA` (🟢🟡🔴) e, em 🟡/🔴, `DIREÇÃO VISUAL` (cenário, figurino, ajuste de cena, no máximo 1 virada, sem caricatura). DIREÇÃO VISUAL prevalece sobre ALERTAS PRO EDITOR e COERÊNCIA DE CENA. 🔴 sem direção não sobe. Detalhe: `encaixe-avatar-referencia.md`. · origem: doc do Marlon (produção), 25/09/2026 — ADS_001 da Sarah travou 27 min no Motion Flow (avatar americana + copy na cozinha + referência vovó japonesa no jardim).
 - **R11 · nomenclatura** · `SS-PGnn-ADS_YYY-V_ZZZ`: página no lugar de rede e avatar; ADS na sequência da página; V = mesma copy e referência com outro avatar, figurino ou edição. Referência sempre pelo `SW_nnn` do app. Detalhe: `nomenclatura.md`. · origem: Erick, 25/09/2026 (só Facebook; a MIX não tem avatar fixo).
+- **R12 · título e descrição de postagem (Facebook e YouTube separados)** · Todo anúncio sobe com título + descrição **curtos e diretos** para o **Facebook** e para o **YouTube Shorts**, em EN + PT, já com **3 hashtags** no fim da descrição (público da página + ingrediente + nicho). **Nada de bullets, ✅ ou fascinations na descrição** (nem no Facebook, nem no YouTube). A descrição é só **hook + CTA** ou só **CTA**, **intercalando** os dois formatos (ADS ímpar: Facebook hook+CTA, YouTube só CTA; par: o contrário). CTA do Facebook = palavra-chave + follow; CTA do YouTube = link do perfil (descrição e comentário de Short não clicam). Títulos: Facebook ≤ 60 car. e curiosidade; YouTube ideal ≤ 45, palavra-chave primeiro, sem emoji. Proibido: Ozempic/GLP-1, cura, prazo ou número de resultado, credencial do avatar, nome do produto. Gerar e validar com `scripts/post-fields.js`. Detalhe, tabelas de hashtags e CTAs: `references/titulo-descricao-hashtags.md`. · origem: Erick, 02/10/2026 (descrições "simples e muito diretas"; app mostra Facebook e YouTube separados pra copiar e colar na hora de postar).
 - **R05 · leva** · Variar ângulo, **prova e argumento** entre os anúncios da leva; não repetir o mesmo argumento (ex.: "a versão online dura poucas horas + ingrediente secreto") em vários anúncios. Consultar `banco-de-argumentos.md` (Biblioteca de cartas + "Já usados") e atualizar a tabela ao fim da leva. · origem: feedback no Copy App, 23/09/2026.
