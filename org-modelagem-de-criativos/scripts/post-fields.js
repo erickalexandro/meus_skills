@@ -62,7 +62,7 @@ function topicOf(ad) {
   if (/baking soda/.test(all)) return 'bakingsoda';
   if (/ginger/.test(all)) return 'gingertea';
   if (/cinnamon/.test(all)) return 'cinnamon';
-  return 'kitchenhacks';
+  return 'bakingsoda'; // o produto é a bebida de bicarbonato; vídeo que não cita o ingrediente na fala cai aqui (use `topic` pra forçar outro)
 }
 
 function build(ad) {
