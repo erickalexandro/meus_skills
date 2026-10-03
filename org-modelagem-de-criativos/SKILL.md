@@ -52,9 +52,9 @@ Depois:
 | 4 | Encaixar a persuasão **dentro** dos blocos (abaixo); decidir o CTA pela duração estimada (≤ 50 s: só final; > 50 s: meio + final) | — |
 | 5 | Contar de novo. Passou do alvo: cortar. Faltou: completar com causa/qualificação, nunca com enfeite | contagem final |
 | 6 | **PT**: tradução fiel pra revisão (não é outra copy) | hookPT, bodyPT, ctaFinalPT |
-| 7 | **Título e descrição de postagem (R12)**, Facebook e YouTube separados: escrever em EN + PT o título do YouTube, o título do Facebook e a **linha de hook**; rodar `node scripts/post-fields.js entrada.json saida.json` (monta a CTA, alterna `hook_cta`/`cta`, põe 3 hashtags e valida). **Sem bullets nem fascinations na descrição.** Regras em `references/titulo-descricao-hashtags.md` | `fbTitleEn/Pt` · `fbDescEn/Pt` · `ytTitleEn/Pt` · `ytDescEn/Pt` · `fbDescMode` · `ytDescMode` |
+| 7 | **Título e descrição de postagem (R12)**, Facebook e YouTube separados, **obrigatório em toda copy da OND-organic**: escrever em EN + PT os 6 textos curtos (título do YouTube com a palavra-chave primeiro, título do Facebook de curiosidade, e a **linha de hook**); rodar `node scripts/post-fields.js entrada.json saida.json` (monta a CTA, alterna `hook_cta`/`cta` pela paridade do ADS, põe as 3 hashtags da página e valida a lista negra). **Sem bullets nem fascinations na descrição; primary text não existe mais.** Regras, fórmulas e exemplos em `references/titulo-descricao-hashtags.md` (base: estudo de 03/10/2026 no vault) | `fbTitleEn/Pt` · `fbDescEn/Pt` · `ytTitleEn/Pt` · `ytDescEn/Pt` · `fbDescMode` · `ytDescMode` |
 | 8 | **Briefing** completo (modelo abaixo, com ENCAIXE e DIREÇÃO VISUAL) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
-| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA, encaixe + direção, código `SS-PGnn` e referência `SW_`) + `node scripts/post-fields.js` (R12: títulos, descrição curta, 3 hashtags, nada proibido) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
+| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA, encaixe + direção, código `SS-PGnn` e referência `SW_`) + `node scripts/post-fields.js` (R12: títulos, descrição curta, modos alternados, 3 hashtags da página, nada da lista negra; ERRO reprova, AVISO pede revisão) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
 | 10 | Subir na **Produção do app** com `node <OPS-organic>/scripts/copy-ingest.mjs` (`references/copy-app.md`; a leva entra como rascunho, e o Erick manda pro Pipeline), salvar o **snapshot** da leva no vault e entregar: tabela nomenclatura · referência (`SW_`) · encaixe (🟢🟡🔴 + virada) · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
 
 ## Persuasão dentro do espelho de blocos
@@ -80,7 +80,7 @@ Se não couber, cortar palavras dentro do bloco, nunca apagar um bloco nem estou
 | `fbTitleEn/Pt` · `fbDescEn/Pt` | Facebook: título (1ª linha da legenda) e descrição curta (`[hook]` + CTA da palavra-chave + 3 hashtags). Gerado por `post-fields.js` (R12) |
 | `ytTitleEn/Pt` · `ytDescEn/Pt` | YouTube Shorts: título (palavra-chave primeiro) e descrição curta (`[hook]` + CTA do link do perfil + 3 hashtags). R12 |
 | `fbDescMode` · `ytDescMode` | `hook_cta` ou `cta`, alternados entre os anúncios |
-| ~~`primaryTextEN/PT`~~ | **Aposentado pela R12** (era hook + 3 fascinations ✅). Não escrever mais |
+| ~~`primaryTextEN/PT`~~ (`primaryEn/Pt` no app) | **Aposentado de vez pela R12** (era hook + 3 fascinations ✅). Não escrever, não subir; o `post-fields.js` recusa entrada que ainda traz esse campo |
 | `refChars` | Número: caracteres da fala da referência (a página calcula o %) |
 | `ctaKeyword` | Palavra-chave comentada (RECIPE), mostrada na caixa Edição |
 | `angulo` · `formato` · `publicoFatia` | Caixa "Informações da copy": `#N Nome (secundário: #N Nome)` · formato da Biblioteca + cena · quem, idade, situação vivida, o que já tentou |
@@ -134,6 +134,9 @@ ALERTAS PRO EDITOR: <o que não mostrar: pote, outra pessoa, ambiente novo; cuid
 | Pedir troca de roupa pra "combinar" sem escrever | A roupa vem da MASTER; variante só no campo Figurino da DIREÇÃO VISUAL |
 | Duas viradas no mesmo vídeo, ou virada caricata | No máximo 1, visual, e o avatar tem que parecer que pertence ao lugar |
 | Citar a referência como `CV-`/`SW-` | Sempre `SW_nnn` do app + link |
+| Gerar primary text, bullets ou ✅ na legenda; usar o mesmo título no Facebook e no YouTube | R12: 6 textos curtos + `post-fields.js`; título do YouTube com a palavra-chave primeiro, o do Facebook de curiosidade |
+| Legenda com prazo, peso, tamanho de roupa, "as a nurse" ou Ozempic "porque a fala também tem" | A legenda é mais conservadora que a fala: nada da lista negra de `titulo-descricao-hashtags.md` |
+| Montar a descrição à mão, ou subir anúncio sem os campos `fb*`/`yt*` | Sempre pelo script; anúncio sem os 10 campos de postagem não está pronto |
 | Nomenclatura com rede ou avatar (`SS-FB-AV_002-…`) | `SS-PGnn-ADS_YYY-V_ZZZ` (`references/nomenclatura.md`) |
 
 ## Evolução
