@@ -19,6 +19,8 @@ A copy vira vídeo no Motion Flow **em cima do vídeo de referência**, com a ro
 
 Quando o Erick manda "escolhe do swipe", a escolha de referência é sua: **primeiro pelo encaixe com o avatar** (pessoa e cenário compatíveis, `references/encaixe-avatar-referencia.md`), depois pela faixa de tempo, por nicho próximo de emagrecimento e pela métrica, variando o ângulo entre os anúncios da leva. Molde campeão de outro mundo só entra como decisão, com virada escrita.
 
+Princípios da aula de 02/10 (R13 a R17 em `references/regras-e-qa.md`): **copiar o validado e variar pouco** (R13), referência **recente e com comentário alto** (R14), **biotipo importa, identidade não** (R15), **um validado, muitas variações, uma distinta por página** (R16) e **leitura do sinal da página** antes de leva grande, avisando quando não houver métrica (R17). Quando o Erick pedir "variação de X%", medir com `node scripts/variacao.js` e entregar o número.
+
 Mesmo quando o Erick escolhe a referência, fazer a **triagem 🟢🟡🔴** de cada par avatar × referência antes de escrever. Deu 🔴: avisar na hora com as duas saídas (trocar por uma `SW_` compatível do mesmo formato, ou manter com uma virada) e seguir com a que ele escolher; se ele não estiver na conversa, seguir com a troca e marcar como decisão a confirmar.
 
 ## Qual estratégia: avatar único ou MIX
@@ -54,7 +56,7 @@ Depois:
 | 6 | **PT**: tradução fiel pra revisão (não é outra copy) | hookPT, bodyPT, ctaFinalPT |
 | 7 | **Título e descrição de postagem (R12)**, Facebook e YouTube separados, **obrigatório em toda copy da OND-organic**: escrever em EN + PT os 6 textos curtos (título do YouTube com a palavra-chave primeiro, título do Facebook de curiosidade, e a **linha de hook**); rodar `node scripts/post-fields.js entrada.json saida.json` (monta a CTA, alterna `hook_cta`/`cta` pela paridade do ADS, põe as 3 hashtags da página e valida a lista negra). **Sem bullets nem fascinations na descrição; primary text não existe mais.** Regras, fórmulas e exemplos em `references/titulo-descricao-hashtags.md` (base: estudo de 03/10/2026 no vault) | `fbTitleEn/Pt` · `fbDescEn/Pt` · `ytTitleEn/Pt` · `ytDescEn/Pt` · `fbDescMode` · `ytDescMode` |
 | 8 | **Briefing** completo (modelo abaixo, com ENCAIXE e DIREÇÃO VISUAL) + **infos da copy**: `angulo` (#N de `references/angulos-numerados.md`), `formato`, `publicoFatia`, `ctaKeyword` | campos |
-| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA, encaixe + direção, código `SS-PGnn` e referência `SW_`) + `node scripts/post-fields.js` (R12: títulos, descrição curta, modos alternados, 3 hashtags da página, nada da lista negra; ERRO reprova, AVISO pede revisão) + checklist de copy de `regras-e-qa.md`. Qualquer falha, reescrever | ok |
+| 9 | **QA**: `node scripts/check-leva.js <copies.json>` (tamanho, cenas, palavras, símbolos, 1:36, espelho de blocos, regra do CTA, encaixe + direção, código `SS-PGnn` e referência `SW_`) + `node scripts/post-fields.js` (R12: títulos, descrição curta, modos alternados, 3 hashtags da página, nada da lista negra; ERRO reprova, AVISO pede revisão) + checklist de copy de `regras-e-qa.md` + (se houve pedido de variação) `node scripts/variacao.js itens.json --min 20 --max 30` (R13). Qualquer falha, reescrever | ok |
 | 10 | Subir na **Produção do app** com `node <OPS-organic>/scripts/copy-ingest.mjs` (`references/copy-app.md`; a leva entra como rascunho, e o Erick manda pro Pipeline), salvar o **snapshot** da leva no vault e entregar: tabela nomenclatura · referência (`SW_`) · encaixe (🟢🟡🔴 + virada) · chars ref × copy (+%) · CTA no meio sim/não · gancho · link | resposta |
 
 ## Persuasão dentro do espelho de blocos
@@ -137,6 +139,10 @@ ALERTAS PRO EDITOR: <o que não mostrar: pote, outra pessoa, ambiente novo; cuid
 | Gerar primary text, bullets ou ✅ na legenda; usar o mesmo título no Facebook e no YouTube | R12: 6 textos curtos + `post-fields.js`; título do YouTube com a palavra-chave primeiro, o do Facebook de curiosidade |
 | Legenda com prazo, peso, tamanho de roupa, "as a nurse" ou Ozempic "porque a fala também tem" | A legenda é mais conservadora que a fala: nada da lista negra de `titulo-descricao-hashtags.md` |
 | Montar a descrição à mão, ou subir anúncio sem os campos `fb*`/`yt*` | Sempre pelo script; anúncio sem os 10 campos de postagem não está pronto |
+| "Melhorar" ou sofisticar a fala de um validado, ou inventar formato novo | R13: copiar a fala, trocar o mínimo; formato novo é para quem já leu o jogo |
+| Escolher referência antiga ou só pela view | R14: recente (2 a 3 dias) e comentário por mil views alto |
+| Repetir a mesma frase de uma variação na mesma página, ou ignorar que já existe cópia literal do validado | R16: listar a família antes, uma variação distinta por página |
+| Gastar esforço com detalhe do avatar (cor da roupa, personagem chamativo) | R15: biotipo compatível com quem compra; identidade não importa |
 | Nomenclatura com rede ou avatar (`SS-FB-AV_002-…`) | `SS-PGnn-ADS_YYY-V_ZZZ` (`references/nomenclatura.md`) |
 
 ## Evolução
