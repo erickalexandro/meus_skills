@@ -80,8 +80,18 @@ ok('barra: mais de 3 hashtags', validate(forj3, base).some(x => x.includes('3 ha
 
 // ── aviso (não reprova) ──
 const longo = { ...base, ytTitle: 'Baking soda and lemon morning drink for bloating' }; // 48: acima do ideal (45), abaixo do teto (60)
-ok('YT entre 46 e 60 car. passa com aviso', longo.ytTitle.length > 45 && validate(build(longo), longo).length === 0 && warnings(build(longo)).length === 1);
-ok('YT com 45 car. passa sem aviso', warnings(build({ ...base, ytTitle: 'Baking soda and lemon morning drink for bloat' })).length === 0);
+const temAviso = (ad, re) => warnings(build(ad), ad).some(x => re.test(x));
+ok('YT entre 46 e 60 car. passa com aviso', longo.ytTitle.length > 45 && validate(build(longo), longo).length === 0 && temAviso(longo, /título YT com/));
+ok('YT com 45 car. passa sem aviso de tamanho', !temAviso({ ...base, ytTitle: 'Baking soda and lemon morning drink for bloat' }, /título YT com/));
+
+// ── R18 · o título é headline (avisos) ──
+const h = { ...base, hookEN: 'This is what baking soda does to a bloated belly.', fbTitle: 'What the pharmacy counter never tells you', ytTitle: 'Baking soda in warm water: the untold part' };
+ok('R18: headline curta e curiosa não gera aviso', warnings(build(h), h).length === 0);
+ok('R18: avisa headline FB descritiva', temAviso({ ...h, fbTitle: 'My lemon drink for the gut' }, /sem marcador de curiosidade/));
+ok('R18: avisa headline FB acima de 45 car.', temAviso({ ...h, fbTitle: 'Why the pharmacy counter will never tell you about this' }, /headline FB com/));
+ok('R18: avisa headline FB que repete o hook falado', temAviso({ ...h, fbTitle: 'This is what baking soda does' }, /repete o hook falado/));
+ok('R18: avisa título YT só descritivo', temAviso({ ...h, ytTitle: 'Baking soda and lemon drink recipe' }, /só descritivo/));
+ok('R18: avisa título YT sem palavra-chave na frente', temAviso({ ...h, ytTitle: 'The part nobody tells you: baking soda' }, /sem palavra-chave/));
 
 // ── rodízio de CTA e paridade ──
 const ctas = new Set([1, 2, 3].map(n => build({ ...base, code: `SS-PG01-ADS_00${n}-V_001` }).fbDescEn.split('\n').find(l => /Comment/i.test(l))));

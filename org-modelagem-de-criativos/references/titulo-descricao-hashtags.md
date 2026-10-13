@@ -44,7 +44,9 @@ node scripts/post-fields.test.js                        # depois de mexer no scr
 ```
 Formato de `entrada.json` no topo do script. **ERRO** reprova (código de saída 1); **AVISO** passa, mas vale revisar (título do YouTube entre 46 e 60 caracteres).
 
-## Títulos: um estilo pra cada rede
+## Títulos: headline nas duas redes (R18)
+
+> **Desde 13/10/2026 o título é uma headline**, não um rótulo. O processo (bullets primeiro, Makeover, corte), as fórmulas do Makepeace que cabem na legenda e as headlines validadas do acervo estão em **`headlines.md`**. Esta seção guarda só o que é próprio de cada rede.
 
 Os dois títulos de um anúncio **nunca são iguais** (o script barra). Usar o mesmo título nas duas redes prejudica as duas.
 
@@ -52,11 +54,11 @@ Os dois títulos de um anúncio **nunca são iguais** (o script barra). Usar o m
 |---|---|---|
 | O que é | a **1ª linha da legenda** (não há campo de título) | campo de **título próprio** |
 | Função | fazer parar no feed, intrigar | indexar a busca de Shorts e as sugestões |
-| Estilo | curiosidade direta, frase que uma mulher diria pra amiga na cozinha | **palavra-chave e assunto primeiro**, tom editorial e claro |
-| Tamanho | até **60** caracteres (pra não roubar a CTA dos ~125 visíveis) | ideal **até 45**, teto **60** (o app corta perto de 40–45) |
+| Estilo | **headline curta e curiosa**, frase que uma mulher diria pra amiga na cozinha, abrindo um loop que só o vídeo fecha | **palavra-chave nos 30 primeiros caracteres + gancho de curiosidade** (`[palavra-chave]: [loop]`) |
+| Tamanho | ideal **até 45**, teto **60** (quanto mais curta, melhor; e não rouba a CTA dos ~125 visíveis) | ideal **até 45**, teto **60** (o app corta perto de 40–45) |
 | Não pode | hashtag, emoji em excesso, promessa que aciona filtro de saúde | hashtag, emoji, palavra inteira em CAIXA ALTA |
 
-**Fórmulas validadas do Facebook** (curiosidade direta):
+**Exemplos antigos do Facebook** (do estudo de 03/10; servem de piso, as fórmulas de headline estão em `headlines.md`):
 - *"My neighbor's two-ingredient morning drink"*
 - *"What happens when you calm gut acid first thing"*
 - *"The kitchen habit I started doing at 55"*
@@ -64,7 +66,7 @@ Os dois títulos de um anúncio **nunca são iguais** (o script barra). Usar o m
 - *"This is what baking soda does to morning bloat"*
 - *"Why your lower belly won't budge after 45"*
 
-**Fórmulas validadas do YouTube** (a busca lê a frente do título):
+**Fórmulas de palavra-chave do YouTube** (a busca lê a frente do título; a R18 acrescenta o gancho depois: *"Baking soda water bottle: the missing piece"*):
 | Fórmula | Exemplo |
 |---|---|
 | `[ingrediente] + [benefício ou sintoma]` | *"Baking soda and lemon for belly bloat"* |
@@ -214,8 +216,9 @@ The full recipe is in the link on my profile.
 
 ## Checklist de QA da R12 (passo 9)
 
-- [ ] **Título do YouTube:** palavra-chave no começo · ideal ≤ 45, nunca > 60 · sem hashtag, emoji ou CAIXA ALTA
-- [ ] **Título do Facebook:** curiosidade direta, conversacional · ≤ 60 · sem hashtag · diferente do título do YouTube
+- [ ] **Título do YouTube:** palavra-chave nos 30 primeiros caracteres + gancho de curiosidade (R18) · ideal ≤ 45, nunca > 60 · sem hashtag, emoji ou CAIXA ALTA
+- [ ] **Título do Facebook:** headline curta e curiosa (R18), não repete o hook falado · ideal ≤ 45, teto 60 · sem hashtag · diferente do título do YouTube
+- [ ] **Headlines:** checklist da R18 em `headlines.md` · nenhuma repetida na página · V_002+ igual à V_001
 - [ ] **Descrição:** até 3 linhas úteis e ~320 caracteres · sem ✅, bullet ou parágrafo · sem link
 - [ ] **CTA:** Facebook com palavra-chave + follow · YouTube com o link do perfil, sem pedir comentário
 - [ ] **Modos alternados:** ímpar = FB `hook_cta` / YT `cta`; par = o contrário

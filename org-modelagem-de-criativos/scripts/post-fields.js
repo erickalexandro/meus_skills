@@ -1,4 +1,4 @@
-// Gera e valida título + descrição + hashtags de POSTAGEM (Facebook e YouTube) de cada anúncio (R12).
+// Gera e valida título + descrição + hashtags de POSTAGEM (Facebook e YouTube) de cada anúncio (R12). Os títulos são headlines (R18, references/headlines.md).
 // Base: estudo "Títulos, descrições e hashtags validados (Facebook e YouTube)", vault › Projects & context/OND-organic/Copy (03/10/2026).
 // Uso:  node scripts/post-fields.js entrada.json saida.json
 // entrada.json = [{ code: "SS-PG01-ADS_007-V_001",
@@ -14,7 +14,7 @@
 const fs = require('fs');
 
 // ---------- regras ----------
-const LIM = { ytTitle: 45, ytTitleMax: 60, fbTitle: 60, hook: 90, desc: 320, fbFold: 125 };
+const LIM = { ytTitle: 45, ytTitleMax: 60, fbTitle: 60, fbTitleIdeal: 45, hook: 90, desc: 320, fbFold: 125 };
 
 // Hashtags: exatamente 3 por post = público da página + ingrediente do vídeo + nicho da página.
 const PAGE_TAGS = {
@@ -159,16 +159,33 @@ function validate(out, ad) {
   return e;
 }
 
+// R18 · o título é uma HEADLINE (references/headlines.md). Marcadores de curiosidade das fórmulas que cabem na legenda:
+// pergunta, por que / o que / qual, nunca, errado, verdade, segredo, o único, o que falta, alerta, "não é X", "assista".
+const CURIOSO = /\?|\b(why|what|which|who|how|don't|never|wrong|truth|real|really|secret|nobody|no one|missing|mistake|warning|instead|not|no|guess|watch|look|strange|strangest|only|one|skip|skips|hate|hates|untold|better|vs|then|first)\b/i;
+// Palavra-chave que a busca de Shorts lê: tem que estar na frente do título do YouTube.
+const KEYWORD = /\b(baking soda|lemon|ginger|cinnamon|belly|bloat|bloated|bloating|gut|cravings|menopause|morning|eggs|diet pills|arms|neck)\b/i;
+const norm = s => (s || '').toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+function headlineWarnings(out, ad) {
+  const w = [], fb = out.fbTitleEn || '', yt = out.ytTitleEn || '';
+  if (fb.length > LIM.fbTitleIdeal) w.push(`headline FB com ${fb.length} car. (ideal ≤ ${LIM.fbTitleIdeal}: quanto mais curta, melhor)`);
+  if (fb && !CURIOSO.test(fb)) w.push('headline FB sem marcador de curiosidade (descreve o vídeo em vez de abrir um loop; ver as fórmulas em headlines.md)');
+  if (yt && !CURIOSO.test(yt)) w.push('título YT só descritivo (palavra-chave na frente + um gancho de curiosidade depois)');
+  if (yt && !KEYWORD.test(yt.slice(0, 30))) w.push('título YT sem palavra-chave nos primeiros 30 caracteres (a busca lê a frente)');
+  const hook = norm(ad && ad.hookEN);
+  if (hook && norm(fb) && hook.startsWith(norm(fb))) w.push('headline FB repete o hook falado (a headline abre um segundo loop, não transcreve a primeira frase)');
+  return w;
+}
+
 // Avisos: não reprovam, mas aparecem no relatório.
-function warnings(out) {
-  const w = [];
+function warnings(out, ad) {
+  const w = headlineWarnings(out, ad);
   if ((out.ytTitleEn || '').length > LIM.ytTitle) w.push(`título YT com ${out.ytTitleEn.length} car. (ideal ≤ ${LIM.ytTitle}; o feed corta perto de 40)`);
   const first = (out.fbDescEn || '').split('\n\n')[0].replace(/\n/g, ' ');
   if (`${out.fbTitleEn || ''} ${first}`.length > LIM.fbFold + 60) w.push('Facebook: título + descrição longos; a CTA pode cair depois do "ver mais" (~125 car.)');
   return w;
 }
 
-module.exports = { build, validate, warnings, LIM, PAGE_TAGS, TOPIC_TAG, TAG_BLACKLIST, BANNED };
+module.exports = { build, validate, warnings, headlineWarnings, LIM, PAGE_TAGS, TOPIC_TAG, TAG_BLACKLIST, BANNED };
 
 if (require.main === module) {
   const [inp, outp] = process.argv.slice(2);
@@ -177,7 +194,7 @@ if (require.main === module) {
   let falhou = false, avisos = 0; const res = [];
   for (const ad of ads) {
     let out, err, warn = [];
-    try { out = build(ad); err = validate(out, ad); warn = warnings(out); }
+    try { out = build(ad); err = validate(out, ad); warn = warnings(out, ad); }
     catch (ex) { out = { code: ad.code, ytTitleEn: ad.ytTitle || '' }; err = [ex.message]; }
     if (err.length) falhou = true;
     avisos += warn.length;
